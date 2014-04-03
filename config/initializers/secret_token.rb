@@ -9,4 +9,20 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Iou::Application.config.secret_key_base = '7eb548b4e30df7eee55861ea8880ac05c4f352a702b96ac7fb71316fabd2378874b37b7982bd7f0832f68ce69d601cd8a317af52dbd7b1cf1197bf2f84aaa39b'
+require 'securerandom'
+
+def secure_token
+    token_file = Rails.root.join('.secret')
+    if File.exist?(token_file)
+        # Use the existing token.
+        File.read(token_file).chomp
+        else
+        # Generate a new token and store it in token_file.
+        token = SecureRandom.hex(64)
+        File.write(token_file, token)
+        token
+    end
+end
+
+Iou::Application.config.secret_key_base = secure_token
+
