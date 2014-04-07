@@ -1,11 +1,12 @@
 require 'spec_helper'
 
-describe "LandingPages" do
-  describe "GET /landing_pages" do
-    it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get landing_pages_path
-      response.status.should be(200)
-    end
+describe "LandingPage" do
+  describe "Going to landing page" do
+    before { visit root_path }
+      it { should have_title('IOU') }
+      it { should have_content('Jake Hilborn') }
+      it { should have_content('Alyssa Morrow') }
+      it { should have_content('Caleb Durante') }
+      it { should have_selector('slogan', text: 'Get Paid.') }
   end
 end
