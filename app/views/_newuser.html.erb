@@ -1,6 +1,7 @@
 		<div class="container">	
 				<div class="row">
-  	<div class="span6 offset3">
+  	<h3> Sign up </h3>
+    <div class="span6 offset3">
     <%= form_for(@user) do |f| %>
 
      <%= render 'shared/error_messages' %>
@@ -16,7 +17,7 @@
 
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation %>
-
+    
       <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>
