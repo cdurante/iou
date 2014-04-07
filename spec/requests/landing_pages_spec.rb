@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe "LandingPage" do
+ subject { page }
   describe "Going to landing page" do
     before { visit root_path }
       it { should have_title('IOU') }
