@@ -111,6 +111,7 @@ a:hover {
 
 .content,.container {
 	overflow: hidden;
+	text-align: center;
 }
 
 .trans {
