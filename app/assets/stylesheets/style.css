@@ -17,6 +17,12 @@ body {
 	text-shadow: none;
 }
 
+#signup_error {
+	color: red;
+	text-align: center;
+	font-size: 20px;
+
+}
 .clear {
 	clear: both;
 }
