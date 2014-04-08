@@ -326,16 +326,7 @@
 
 		<!-- contact -->
 		<section id="section-signup" class="section appear clearfix">
-	<div id = "signup_error"> Please fill in the following fields: </div>
 
-		<script type ="text/javascript">
-			<% if @error == true %>
-	  			console.log("in ruby statement");
-	  			$( "#signup_error" ).show();
-	        <% else %>
-	        	$( "#signup_error" ).hide();
-	        <% end %>
-        </script>
 		<%= render '/users/new' %>
 
 
@@ -368,6 +359,15 @@
 
     		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
         <script type="text/javascript">
+       	$(document).ready(function(){
+			<% if @error == true %>
+	  			console.log("in ruby statement");
+	  			$( "#signup_error" ).show();
+	        <% else %>
+	        	$( "#signup_error" ).hide();
+	        <% end %>
+       	});
+		
 
             // When the window has finished loading create our google map below
             google.maps.event.addDomListener(window, 'load', init);
@@ -397,3 +397,6 @@
         </script>
 	</body>
 </html>
+
+
+
