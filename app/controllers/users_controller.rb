@@ -32,6 +32,7 @@ class UsersController < ApplicationController
       else
         @error = true
         render 'landing_page/home'
+        
       end
     end
   end
