@@ -16,6 +16,11 @@ class User < ActiveRecord::Base
     Digest::SHA1.hexdigest(token.to_s)
   end
 
+  def friendswith?(other_user)
+    #relationships have not been set up yet
+    relationships.find_by(friends_id: other_user.id)
+  end
+
   private
 
     def create_remember_token
