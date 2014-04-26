@@ -1,0 +1,6 @@
+<%# Update this to work with whatever relationship model we build %>
+
+<%= form_for(current_user.relationships.build(friend_id: @user.id)) do |f| %>
+  <div><%= f.hidden_field :friend_id %></div>
+  <%= f.submit "Add friend", class: "btn btn-large btn-primary" %>
+<% end %>

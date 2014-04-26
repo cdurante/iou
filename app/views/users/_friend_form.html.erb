@@ -1,3 +1,5 @@
+<%# BE SURE TO UPDATE ROUTES FILE TO WORK WITH THIS %>
+
 <% unless current_user?(@user) %>
   <div id="friend_form">
   <% if current_user.friendswith?(@user) %>

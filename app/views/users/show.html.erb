@@ -2,4 +2,6 @@
 <h1>
   <%= gravatar_for @user %>
   <%= @user.name %>
+  <%#= render 'friend_form' if signed_in? %>
+  <%= render 'friend_form' %>
 </h1>
