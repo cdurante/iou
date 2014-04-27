@@ -1650,7 +1650,7 @@ label {
   font-weight: bold;
 }
 
-label[for=user_name],label[for=user_email],label[for=user_password],label[for=user_password_confirmation] {
+label[for=new_user] {
   text-align: right;
   width: 135px;
 }

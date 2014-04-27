@@ -9,7 +9,7 @@
 
   <%= render '/users/fields', f: f %>
         <%= f.submit "Create my account", class: "btn btn-large btn-primary" %></br>
-    <div id = "signin_section">
+    <div id = "signin_button">
     <p> Already have an account? </p>
     <%= link_to "Sign In", signin_url, class: "btn btn-large btn-primary", id: "signin_button" %>
     </div>

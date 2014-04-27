@@ -99,12 +99,7 @@ footer {
       <!-- left -->
       <a href="#"><strong><i class="glyphicon glyphicon-briefcase"></i> Toolbox</strong></a>
       <hr>
-         <section>
-	<h1>
-  	 <%= gravatar_for @user %>
-  	 <%= @user.name %>
-	</h1>
-   	</section>
+      
       <ul class="nav nav-pills nav-stacked">
         <li><a href="#"><i class="glyphicon glyphicon-flash"></i> Alerts</a></li>
         <li><a href="#"><i class="glyphicon glyphicon-link"></i> Links</a></li>
