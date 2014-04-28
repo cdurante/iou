@@ -407,6 +407,7 @@ section.section {
 	height: 100%;
 	line-height: 100%;
 	vertical-align: middle;
+	color: #fff;
 	font-weight: 700;
 	font-size: 13px;
 	letter-spacing: .1em;
