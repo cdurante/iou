@@ -1,1 +1,12 @@
-<%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+  <% @users.each do |user| %>
+	<%= render @users %>
+  <% end %>
+</ul>
+
+<%= will_paginate %>

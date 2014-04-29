@@ -3,16 +3,18 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-
-
-	<script>
-		$(document).ready(function(){
-			$( "#error_explanation" ).load(function() {
-			  window.location = '#section-signup';
-			});
-
-		});
-	</script>
+    <head>
+		<!-- BASICS -->
+        <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>IOU</title>
+        <meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<%= stylesheet_link_tag "isotope.css", "default.css", "javascripts/fancybox/jquery.fancybox.css", "bootstrap.css", "bootstrap-theme.css",  "style.css" %>
+		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	
+    </head>
 	 
     <body>
 		<section id="header" class="appear"></section>
@@ -32,6 +34,8 @@
 						<li><a href="#section-about">About</a></li>
 						<li><a href="#section-works">Features</a></li>
 						<li><a href="#section-signup">Sign Up</a></li>
+						<li><%= link_to "Sign In", signin_path %></li>
+						
 					</ul>
 				</div><!--/.navbar-collapse -->
 			</div>
@@ -322,7 +326,7 @@
             </div>
 		</section>
 
-		<!--  sign-up -->
+		<!-- contact -->
 		<section id="section-signup" class="section appear clearfix">
 
 		<%= render '/users/new' %>
@@ -330,7 +334,7 @@
 
 			</div>
 		</section>
-	
+		
 	<section id="footer" class="section footer">
 		<div class="container">
 			<div class="row animated opacity mar-bot20" data-andown="fadeIn" data-animation="animation">

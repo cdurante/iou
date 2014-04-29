@@ -6,6 +6,7 @@ require 'spec_helper'
 
   describe "profile page" do
     let(:user) { FactoryGirl.create(:user) }
+    let(:user2) { FactoryGirl.create(:user2, :class => 'User') }
     #let!(:m1) { FactoryGirl.create(:micropost, user: user, content: "Foo") }
     #let!(:m2) { FactoryGirl.create(:micropost, user: user, content: "Bar") }
 
@@ -14,32 +15,32 @@ require 'spec_helper'
     it { should have_content(user.name) }
     #it { should have_title(user.name) }
 
-    #describe "friend/unfriend buttons" do
-    #  let(:other_user) { FactoryGirl.create(:other_user) }
-    #  
-    #  before { sign_in user }
+    describe "friend/unfriend buttons" do
+      #let(:other_user) { FactoryGirl.create(:other_user) }
+      
+      before { sign_in user }
 
-    #  describe "friending a user" do
-    #    before { visit user_path(other_user) }
+      #describe "friending a user" do
+      #  before { visit user_path(user2) }
 
-    #    it "should add the user to the page" do
-    #      expect do
-    #        click_button "Add friend"
-    #      end.to have_content(user.name)
-    #    end
+      #  it "should add the user to the page" do
+      #    expect do
+      #      click_button "Add friend"
+      #    end.to have_content(user.name)
+      #  end
 
-    #    it "should increment the user's friends count" do
-    #      expect do
-    #        click_button "Add friend"
-    #      end.to change(user.friends, :count).by(1)
-    #    end
+      #  it "should increment the user's friends count" do
+      #    expect do
+      #      click_button "Add friend"
+      #    end.to change(user.friends, :count).by(1)
+      #  end
 
-    #    it "should increment the other user's friends count" do
-    #      expect do
-    #        click_button "Add friend"
-    #      end.to change(other_user.friendships, :count).by(1)
-    #    end
-    #  end
-    #end
+      #  it "should increment the other user's friends count" do
+      #    expect do
+      #      click_button "Add friend"
+      #    end.to change(other_user.friendships, :count).by(1)
+      #  end
+      #end
+    end
   end
 end

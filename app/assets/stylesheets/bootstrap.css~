@@ -734,6 +734,8 @@ pre code {
 .container {
   padding-right: 15px;
   padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 @media (min-width: 768px) {
   .container {
@@ -1648,7 +1650,7 @@ label {
   font-weight: bold;
 }
 
-label[for=user_name],label[for=user_email],label[for=user_password],label[for=user_password_confirmation] {
+label[for=new_user] {
   text-align: right;
   width: 135px;
 }
