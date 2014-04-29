@@ -65,29 +65,7 @@ footer {
     <body  >
         
         <!-- Header -->
-<div id="top-nav" class="navbar navbar-inverse navbar-static-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-toggle"></span>
-      </button>
-      <a class="navbar-brand" href="#">Control Panel</a>
-    </div>
-    <div class="navbar-collapse collapse">
-      <ul class="nav navbar-nav navbar-right">
-        
-        <li class="dropdown">
-          <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
-            <i class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span></a>
-          <ul id="g-account-menu" class="dropdown-menu" role="menu">
-            <li><a href="#">My Profile</a></li>
-            <li><a href="#"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div><!-- /container -->
-</div>
+
 <!-- /Header -->
 
 <!-- Main -->
@@ -97,8 +75,7 @@ footer {
   <div class="row">
   <div class="col-md-3">
       <!-- left -->
-      <a href="#"><strong><i class="glyphicon glyphicon-briefcase"></i> Toolbox</strong></a>
-      <hr>
+  
          <section>
   <h1>
      <%= gravatar_for @user %>
@@ -123,17 +100,10 @@ footer {
         
       <!-- column 2 --> 
       
-     
-       <a href="#"><strong><i class="glyphicon glyphicon-dashboard"></i> My Dashboard</strong></a>  
-            
-       <hr>
-      
      <div class="row">
             <!-- center left--> 
           <div class="col-md-7">
-        <div class="well">Inbox Messages <span class="badge pull-right">3</span></div>
-              
-              <hr>
+      
               
               <div class="panel panel-default">
                   <div class="panel-heading"><h4>Processing Status</h4></div>
@@ -174,15 +144,7 @@ footer {
               <li><a title="Add Widget" data-toggle="modal" href="#addWidgetModal"><span class="glyphicon glyphicon-plus-sign"></span></a></li>
             </ul>  
               
-                <hr>
-              
-        <p>
-                  This is a responsive dashboard-style layout that uses <a href="http://www.getbootstrap.com">Bootstrap 3</a>. You can use this template as a starting point to create something more unique.
-                </p>
-                <p>
-                  Visit the Bootstrap Playground at <a href="http://www.bootply.com">Bootply</a> to tweak this layout, or discover 1000's of Bootstrap code examples and snippets.
-                </p>
-              
+               
                 <hr>
               
                 <div class="btn-group btn-group-justified">

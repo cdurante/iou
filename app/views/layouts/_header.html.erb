@@ -15,12 +15,11 @@
             <li><%= link_to "Home", root_path, class: "active" %></li>
             <li><a href="#section-about">About</a></li>
             <li><a href="#section-works">Features</a></li>
-            <li><a href="#section-signup">Sign Up</a></li>
-            <li> <%= link_to "Sign In", signin_path %> </li>
+          
             
             <% if signed_in? %>
             <li id="fat-menu" class="dropdown">
-              <li> <%= link_to "Account", current_user, :class=> "dropdown-toggle", :data => {:toggle=>"dropdown"} %></li>
+              <li> <%= link_to "Account", current_user %></li>
               <li><b class="caret"></b> </li>
               
               <ul class="dropdown-menu">
@@ -35,8 +34,11 @@
             </li>
           <% else %>
             <li><%= link_to "Sign in", signin_path %></li>
+            <li><a href="#section-signup">Sign Up</a></li>
+            <li> <%= link_to "Sign In", signin_path %> </li>
           <% end %>
         </ul>
-        </div><!--/.navbar-collapse -->
+        </div>
+    
       </div>
     </div>
