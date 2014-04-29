@@ -2,6 +2,23 @@
 <h1>
   <%= gravatar_for @user %>
   <%= @user.name %>
-  <%#= render 'friend_form' if signed_in? %>
-  <%= render 'friend_form' %>
 </h1>
+
+<%= link_to "Add Friend", friendships_path(:friend_id => @user), :method => :post %>
+
+<h2>Friends</h2>
+<ul>
+  <% for friendship in @user.friendships %>
+    <li>
+      <%=h friendship.friend.name %>
+      (<%= link_to "remove", friendship, :method => :delete %>)
+    </li>
+  <% end %>
+</ul>
+
+<h2>Friended by Users</h2>
+<ul>
+  <% for user in @user.inverse_friends %>
+    <li><%=h user.name %></li>
+  <% end %>
+</ul>

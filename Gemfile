@@ -21,6 +21,7 @@ group :development, :test do
   gem 'guard-spork', '1.5.0'
   gem 'childprocess', '0.4.0'
   gem 'sqlite3'
+  gem 'nifty-generators'
 end
 
 group :test do
@@ -40,3 +41,5 @@ group :production do
   gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
   gem 'rails_12factor'
 end
+
+gem "mocha", group: :test

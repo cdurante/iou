@@ -1,4 +1,5 @@
 Iou::Application.routes.draw do
+  resources :friendships
     resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root  'landing_page#home'

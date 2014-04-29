@@ -1,4 +1,9 @@
 class User < ActiveRecord::Base
+  has_many :friendships
+  has_many :friends, :through => :friendships
+  has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id"
+  has_many :inverse_friends, :through => :inverse_friendships, :source => :user
+
   before_save { self.email = email.downcase }
   before_create :create_remember_token
   has_secure_password
@@ -16,10 +21,10 @@ class User < ActiveRecord::Base
     Digest::SHA1.hexdigest(token.to_s)
   end
 
-  def friendswith?(other_user)
+  #def friendswith?(other_user)
     #relationships have not been set up yet
-    relationships.find_by(friends_id: other_user.id)
-  end
+  #  relationships.find_by(friends_id: other_user.id)
+  #end
 
   private
 
