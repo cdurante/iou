@@ -144,9 +144,16 @@ a:hover {
 	padding: 0;
 }
 
-.content,.container {
+.content {
 	overflow: hidden;
 	text-align: center;
+}
+.container {
+	overflow: hidden;
+	text-align: center;
+	width: 100%;
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
 .trans {
@@ -407,7 +414,6 @@ section.section {
 	height: 100%;
 	line-height: 100%;
 	vertical-align: middle;
-	color: #fff;
 	font-weight: 700;
 	font-size: 13px;
 	letter-spacing: .1em;

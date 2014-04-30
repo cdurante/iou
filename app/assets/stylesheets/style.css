@@ -144,9 +144,16 @@ a:hover {
 	padding: 0;
 }
 
-.content,.container {
+.content {
 	overflow: hidden;
 	text-align: center;
+}
+.container {
+	overflow: hidden;
+	text-align: center;
+	width: 100%;
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
 .trans {
@@ -807,6 +814,9 @@ nav#filter a {
 #contact-form {
 	position: relative;
 	z-index: 999;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #contact-form input[type=text],#contact-form input[type=email], .contactForm textarea {
