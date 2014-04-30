@@ -8,7 +8,7 @@
 	</div>
 	<div class="container">
 	  <div class="span6 offset3">
-	    <%= form_for(@user, :html => { :class => "contactForm"} ) do |f| %>
+	    <%= form_for(@user, :html => { :class => "contactForm"} )) do |f| %>
 	      <%= render 'shared/error_messages' %>
 		<div id="contact-form" class="cform">
 	  	<%= render '/users/fields', f: f %>
