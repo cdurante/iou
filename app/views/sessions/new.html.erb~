@@ -28,10 +28,10 @@
 		  <%= form_tag sessions_path do %>
 
 		      <%= label_tag :email %>
-		      <%= text_field_tag :email, params[:email] , class: "form-control", placeholder: "Your Email"%>
+		      <%= text_field_tag :email, params[:email] ,class: "form-control", placeholder: "Your Email"%>
 
 		      <%= label_tag :password %>
-		      <%= password_field_tag :password , class: "form-control" %>
+		      <%= password_field_tag :password ,class: "form-control" %>
 
 		      <%= submit_tag "Sign in", class: "btn btn-theme pull-right" %>
 		    <% end %>

@@ -789,7 +789,27 @@ nav#filter a {
 /*===========================
   --- Contact ----
 =========================== */
-
+#contact-form a.btn {
+	color: #FFF;
+	width: 185px;
+	height: 60px;
+	text-shadow: none;
+	font-size: 14px;
+	padding: 0.5em;
+	letter-spacing: 0.05em;
+	margin: 0px 0px 20px;
+	display: block;
+	border: 0px none;
+	text-transform: none;
+	border-radius: 0px;
+	box-shadow: none;
+}
+#contact-form a.btn:hover, #contact-form a.btn:active {
+	background: #43413e !important;
+}
+#signin-text p {
+	text-align: left;
+}
 .validation {
 	display:none;
 	margin: 0 0 20px;

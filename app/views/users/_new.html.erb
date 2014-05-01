@@ -12,11 +12,10 @@
 	      <%= render 'shared/error_messages' %>
 		<div id="contact-form" class="cform">
 	  	<%= render '/users/fields', f: f %>
-		<%= f.submit "Create my account", class: "btn btn-theme pull-left" %></br>
-		    <div id = "signin">
-		    <p> Already have an account? </p>
-		    <%= link_to "Sign In", signin_url, class: "btn btn-theme pull-left", type: "submit" %>
-		    </div>
+ 		<p id = "signin-text"> Already have an account? </p>
+		<%= f.submit "Create my account", class: "btn btn-theme pull-left" %>
+		    <%= link_to "Sign In", signin_url, class: "btn btn-theme pull-right", type: "submit" %>
+
 		    <% end %>
 		</div>
 

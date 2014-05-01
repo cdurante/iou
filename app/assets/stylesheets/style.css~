@@ -789,6 +789,23 @@ nav#filter a {
 /*===========================
   --- Contact ----
 =========================== */
+#contact-form a.btn {
+	color: #FFF;
+	width: 185px;
+	height: 60px;
+	text-shadow: none;
+	font-size: 14px;
+	padding: 0.5em;
+	letter-spacing: 0.05em;
+	margin: 0px 0px 20px;
+	display: block;
+	border: 0px none;
+	text-transform: none;
+	border-radius: 0px;
+	box-shadow: none;
+}
+#contact-form a.btn:hover, #contact-form a.btn:active {
+	background: #43413e !important;
 
 .validation {
 	display:none;
@@ -814,6 +831,9 @@ nav#filter a {
 #contact-form {
 	position: relative;
 	z-index: 999;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #contact-form input[type=text],#contact-form input[type=email], .contactForm textarea {
