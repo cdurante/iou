@@ -9,6 +9,14 @@
   General
   ========================================================================== */
 
+
+/* home page Friend section */
+#list_friends ul {
+	list-style-type:none;
+}
+#list_friends img.gravatar {
+	height: 50px;
+}
 #signin_section p {
 	display: inline;
 	font-size: 15px;
@@ -806,7 +814,10 @@ nav#filter a {
 }
 #contact-form a.btn:hover, #contact-form a.btn:active {
 	background: #43413e !important;
-
+}
+#signin-text p {
+	text-align: left;
+}
 .validation {
 	display:none;
 	margin: 0 0 20px;

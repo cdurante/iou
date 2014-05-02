@@ -9,6 +9,16 @@
   General
   ========================================================================== */
 
+
+/* home page Friend section */
+#list_friends ul {
+	list-style-type:none;
+}
+#list_friends img.gravatar {
+	height: 50px;
+	border: 1px solid #5BC0DE;
+	margin-right: 5px;
+}
 #signin_section p {
 	display: inline;
 	font-size: 15px;

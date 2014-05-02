@@ -172,8 +172,8 @@ footer {
                 <ul>
                   <% for friendship in @user.friendships %>
                     <li>
-		      <%= gravatar_for friendship.friend %>
                       <%=h friendship.friend.name %>
+     		      <%= gravatar_for friendship.friend %>
 		      <%= link_to "New Bill", transactions_path(:debtor_id => @user), :method => :post %>
 
                       (<%= link_to "remove", friendship, :method => :delete %>)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140429173557) do
+ActiveRecord::Schema.define(version: 20140502144727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,19 @@ ActiveRecord::Schema.define(version: 20140429173557) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "transactions", force: true do |t|
+    t.integer  "collector_id"
+    t.integer  "debtor_id"
+    t.string   "name"
+    t.float    "amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "transactions", ["collector_id", "debtor_id", "name"], name: "index_transactions_on_collector_id_and_debtor_id_and_name", unique: true, using: :btree
+  add_index "transactions", ["collector_id"], name: "index_transactions_on_collector_id", using: :btree
+  add_index "transactions", ["debtor_id"], name: "index_transactions_on_debtor_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"

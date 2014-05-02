@@ -3,7 +3,7 @@ Iou::Application.routes.draw do
   resources :transactions
    resources :users do
     member do
-      get :transactions
+      get :following, :followers
     end
   end
   resources :sessions, only: [:new, :create, :destroy]
