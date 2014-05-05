@@ -1,0 +1,4 @@
+class AjaxController < ApplicationController
+  def users
+  end
+end

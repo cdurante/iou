@@ -1,4 +1,5 @@
 Iou::Application.routes.draw do
+  get "ajax/users"
   resources :friendships
   resources :transactions
    resources :users do

@@ -1,0 +1,49 @@
+<div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <i class="glyphicon glyphicon-wrench pull-right"></i>
+            <h4>Create new Transaction</h4>
+          </div>
+        </div>
+        <div class="panel-body">
+          
+          <form class="form form-vertical">
+            <div class="control-group">
+		<%= form_for Transaction.new do |f| %>
+		  <%= render 'shared/error_messages', object: f.object %>
+		  <div class="field">
+		    <label>Transaction Name</label>
+		    <div class="controls">
+		    <%= f.text_area :name, placeholder: "Transaction Name" ,class: "form-control" %>
+	     </div>
+
+	   <div class="control-group">
+              <label>Collector</label>
+              <div class="controls">
+		<%= f.text_area :collector, placeholder: "Collector Name", class: "form-control" %>
+
+              </div>
+            </div> 
+
+	   <div class="control-group">
+              <label>Ower</label>
+              <div class="controls">
+		<%= f.text_area :debtor, placeholder: "Debtor Name", class: "form-control" %>
+
+              </div>
+            </div>
+
+	     <div class="control-group">
+              <label>Amount</label>
+              <div class="controls">
+		<%= f.text_area :amount, placeholder: "Amount", class: "form-control" %>
+
+              </div>
+            </div> 
+
+		  </div>
+		  <%= f.submit "Create", class: "btn btn-large btn-primary" %>
+		<% end %>
+
+        </div><!--/panel content-->
+      </div><!--/panel-->

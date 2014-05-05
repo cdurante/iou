@@ -24,7 +24,11 @@
         <![endif]-->
 
         <!-- CSS code from Bootply.com editor -->
-        
+        //= require jquery
+	//= require jquery-ui
+	//= require jquery_ujs
+	//= require_tree .
+
         <style type="text/css">
             .navbar-static-top {
   margin-bottom:20px;
@@ -189,12 +193,8 @@ footer {
                   <% end %>
                 </ul>
 
-		 
+			<%= render 'shared/transaction_form' %>
 
-
-                              
-      </div><!--/col-span-6-->
-     
        </div><!--/row-->
     </div><!--/col-span-9-->
     
@@ -303,55 +303,10 @@ footer {
       
       <hr>
               
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <div class="panel-title">
-            <i class="glyphicon glyphicon-wrench pull-right"></i>
-            <h4>Submit Request</h4>
-          </div>
-        </div>
-        <div class="panel-body">
-          
-          <form class="form form-vertical">
-            <div class="control-group">
-              <label>Name</label>
-              <div class="controls">
-                <input type="text" class="form-control" placeholder="Enter Name">
-              </div>
-            </div>      
-            <div class="control-group">
-              <label>Title</label>
-              <div class="controls">
-                <input type="password" class="form-control" placeholder="Password">
-                
-              </div>
-            </div>   
-            <div class="control-group">
-              <label>Details</label>
-              <div class="controls">
-                <textarea class="form-control"></textarea>
-              </div>
-            </div> 
-            <div class="control-group">
-              <label>Select</label>
-              <div class="controls">
-                <select class="form-control"><option>General Question</option><option>Server Issues</option><option>Billing Question</option></select>
-              </div>
-            </div>    
-            <div class="control-group">
-              <label></label>
-              <div class="controls">
-                <button type="submit" class="btn btn-primary">
-                  Post
-                </button>
-              </div>
-            </div>   
-            
-          </form>
-          
-          
-        </div><!--/panel content-->
-      </div><!--/panel-->
+      
+
+
+
       
       <div class="panel panel-default">
         <div class="panel-heading"><div class="panel-title"><h4>Engagement</h4></div></div>

@@ -20,6 +20,12 @@ namespace :db do
                    password: password,
                    password_confirmation: password)
     end
-
+    users = User.all(limit: 6)
+    50.times do
+      name = Faker::Lorem.word
+      amount = 3.0
+      debtor = user.first.id
+      users.each { |user| user.microposts.create!(content: content, amount: amount, debtor: debtor) }
+    end
   end
 end

@@ -1,0 +1,8 @@
+<li>
+  <span class="content"><%= transaction.debtor.name %></span>
+  <span class="content"><%= transaction.collector.name %></span>
+  <span class="content"><%= transaction.amount %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(transaction.created_at) %> ago.
+  </span>
+</li>
