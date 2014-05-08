@@ -30,7 +30,8 @@ class UsersController < ApplicationController
         flash[:success] = "Welcome to IOU"
         redirect_to @user
       else
-        render 'landing_page/home'
+        flash[:error] = "Unable to add friend."
+        render root_path
         
       end
     end
@@ -52,7 +53,7 @@ class UsersController < ApplicationController
   def destroy
     if current_user.admin? && User.find(params[:id])==current_user
       flash[:error] = "You cannot delete your own administrative account."
-    else
+    else redirect_to @user
       User.find(params[:id]).destroy
       flash[:success] = "User deleted."
       redirect_to users_url

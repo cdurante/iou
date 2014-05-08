@@ -8,24 +8,41 @@ namespace :db do
                  admin: true)
 
     User.create!(name: "Example User",
-                 email: "example@railstutorial.org",
+                 email: "Nexample@railstutorial.org",
                  password: "foobar",
                  password_confirmation: "foobar")
-    99.times do |n|
+
+     50.times do |n|
       name  = Faker::Name.name
-      email = "example-#{n+1}@railstutorial.org"
+      email = "Nexample-#{n+1}@railstutorial.org"
       password  = "password"
-      User.create!(name: name,
+      user1 = User.create!(name: name,
                    email: email,
                    password: password,
                    password_confirmation: password)
+
+      name  = Faker::Name.name
+      email = "Pexample-#{n+1}@railstutorial.org"
+      password  = "password"
+      user2 = User.create!(name: name,
+                   email: email,
+                   password: password,
+                   password_confirmation: password)
+
+
+      r = Random.new
+      tname = Faker::Lorem.word
+      amount = r.rand(10...42)
+      collector = user1.id
+      debtor = user2.id
+      Transaction.create!(name: tname,
+                   amount: amount,
+                   collector_id: collector,
+                   debtor_id: debtor)
+
+
     end
-    users = User.all(limit: 6)
-    50.times do
-      name = Faker::Lorem.word(1)
-      amount = 3.0
-      debtor = user.first.id
-      users.each { |user| user.microposts.create!(content: content, amount: amount, debtor: debtor) }
-    end
+
+
   end
 end

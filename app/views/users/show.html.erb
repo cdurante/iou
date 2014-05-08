@@ -24,10 +24,7 @@
         <![endif]-->
 
         <!-- CSS code from Bootply.com editor -->
-        //= require jquery
-	//= require jquery-ui
-	//= require jquery_ujs
-	//= require_tree .
+
 
         <style type="text/css">
             .navbar-static-top {
@@ -73,7 +70,7 @@ footer {
 <!-- /Header -->
 
 <!-- Main -->
-<div class="container">
+<div class="container" style="padding-top: 100px;">
   
   <!-- upper section -->
   <div class="row">
@@ -172,7 +169,7 @@ footer {
                 <br>
                 <%= link_to "Add Friend", friendships_path(:friend_id => @user), :method => :post %>
 		<div id="list_friends">
-                <h2>Friends</h2>
+                <h3>Friends</h3>
                 <ul>
                   <% for friendship in @user.friendships %>
                     <li>
@@ -185,14 +182,13 @@ footer {
                   <% end %>
                 </ul>
                 </div>
-                <h2>Friended by Users</h2>
+                <h3>Friended by Users</h3>
                 <ul>
                   <% for user in @user.inverse_friends %>
                     <li><%=h user.name %></li>
 		    <%= gravatar_for friendship.friend %>
                   <% end %>
                 </ul>
-
 			<%= render 'shared/transaction_form' %>
 
        </div><!--/row-->
@@ -210,26 +206,43 @@ footer {
       <hr>    
     </div>
     <div class="col-md-8">
-      
+      <h3>Your Collections</h3>
       <table class="table table-striped">
         <thead>
-          <tr><th>Visits</th><th>ROI</th><th>Source</th><th>Description and Notes</th></tr>
+          <tr><th>Name</th><th>Amount</th><th>Debtor</th><th>Description</th><th></th></tr>
         </thead>
         <tbody>
-          <tr><td>45</td><td>2.45%</td><td>Direct</td><td>Sam sapien massa, aliquam in cursus ut, ullamcorper in tortor. 
-          Aliquam mauris arcu, tristique a lobortis vitae, condimentum feugiat justo.</td></tr>
-          <tr><td>289</td><td>56.2%</td><td>Referral</td><td>After RWD massa, aliquam in cursus ut, ullamcorper in tortor. 
-          Aliquam mauris arcu, tristique a lobortis vitae, condimentum feugiat justo.</td></tr>
-          <tr><td>98</td><td>25%</td><td>Type</td><td>Wil sapien massa, aliquam in cursus ut, ullamcorper in tortor. 
-          Liquam mauris arcu, tristique a lobortis vitae, condimentum feugiat justo.</td></tr>
-          <tr><td>109</td><td>8%</td><td>..</td><td>Forfoot aliquam in cursus ut, ullamcorper in tortor. 
-          Okma mauris arcu, tristique a lobortis vitae, condimentum feugiat justo.</td></tr>
-          <tr><td>34</td><td>14%</td><td>..</td><td>Mikel sapien massa, aliquam in cursus ut, ullamcorper in tortor. 
-          Maliquam mauris arcu, tristique a lobortis vitae, condimentum feugiat justo.</td></tr>
+	  <% for transaction in @user.transactions %>
+	  <% @debtor = User.find(transaction.debtor_id) %>
+          <tr><td><%=h transaction.name %></td><td><%=h transaction.amount %></td><td><%=h @debtor.name %></td><td>Sam sapien massa, aliquam in cursus ut, ullamcorper in tortor. 
+          Aliquam mauris arcu, tristique a lobortis vitae, condimentum feugiat justo.</td>
+	  <!-- option to remove transaction -->
+	<td>
+	  <%= link_to "delete", transaction, method: :delete,
+                                     data: { confirm: "You sure?" },
+                                     title: micropost.content %>
+	<% end %>
+	</td>
+	</tr>
+
+	  <% end %>
         </tbody>
       </table>
       
-      <hr>              
+      <hr>     
+<div class="col-md-8">
+      <h3>What You Owe</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr><th>Name</th><th>Amount</th><th>Debtor</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+	  <% for transaction in @user.transactions %>
+          <tr><td><%=h transaction.name %></td><td><%=h transaction.amount %></td><td><%=h transaction.debtor_id %></td><td>Sam sapien massa, aliquam in cursus ut, ullamcorper in tortor. 
+          Aliquam mauris arcu, tristique a lobortis vitae, condimentum feugiat justo.</td></tr>
+	  <% end %>
+        </tbody>
+      </table>         
       
       <!--tabs-->
       <div class="container">

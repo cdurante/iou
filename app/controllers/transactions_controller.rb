@@ -1,17 +1,20 @@
 class TransactionsController < ApplicationController
-  before_action :signed_in_user
+
 
   def create
-    @transaction = current_user.transactions.build(:collector_id => params[:collector].id,:debtor_id => params[:debtor].id, :name => params[:name], :amount => params[:amount])
+    @transaction = current_user.transactions.build(:debtor_id => params[:debtor].id, :name => params[:name], :amount => params[:amount], :paid => false)
     if @transaction.save
-      flash[:success] = "Transaction created"
-      redirect_to root_url
+      flash[:notice] = "Transaction created"
     else
-      render 'static_pages/home'
+      flash[:error] = "Unable to create transaction."
+      redirect_to root_url
     end
   end
 
   def destroy
+    @transaction.destroy
+    flash[:notice] = "Removed transaction."
+    redirect_to current_user
   end
 
   private

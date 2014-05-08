@@ -1,10 +1,11 @@
 class CreateTransactions < ActiveRecord::Migration
   def change
     create_table :transactions do |t|
-      t.integer :collector_id
+      t.integer :user_id
       t.integer :debtor_id
       t.string :name
       t.float :amount
+      t.boolean :paid
 
       t.timestamps
     end
