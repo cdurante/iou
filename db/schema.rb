@@ -24,17 +24,18 @@ ActiveRecord::Schema.define(version: 20140502144727) do
   end
 
   create_table "transactions", force: true do |t|
-    t.integer  "collector_id"
+    t.integer  "user_id"
     t.integer  "debtor_id"
     t.string   "name"
     t.float    "amount"
+    t.boolean  "paid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "transactions", ["collector_id", "debtor_id", "name"], name: "index_transactions_on_collector_id_and_debtor_id_and_name", unique: true, using: :btree
-  add_index "transactions", ["collector_id"], name: "index_transactions_on_collector_id", using: :btree
   add_index "transactions", ["debtor_id"], name: "index_transactions_on_debtor_id", using: :btree
+  add_index "transactions", ["user_id", "debtor_id", "name"], name: "index_transactions_on_user_id_and_debtor_id_and_name", unique: true, using: :btree
+  add_index "transactions", ["user_id"], name: "index_transactions_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"

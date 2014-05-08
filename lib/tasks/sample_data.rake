@@ -33,11 +33,9 @@ namespace :db do
       r = Random.new
       tname = Faker::Lorem.word
       amount = r.rand(10...42)
-      collector = user1.id
       debtor = user2.id
       Transaction.create!(name: tname,
                    amount: amount,
-                   collector_id: collector,
                    debtor_id: debtor)
 
 

@@ -9,8 +9,8 @@ class CreateTransactions < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :transactions, :collector_id
+    add_index :transactions, :user_id
     add_index :transactions, :debtor_id
-    add_index :transactions, [:collector_id, :debtor_id, :name], unique: true
+    add_index :transactions, [:user_id, :debtor_id, :name], unique: true
   end
 end
