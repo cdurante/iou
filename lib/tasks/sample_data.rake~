@@ -8,7 +8,7 @@ namespace :db do
                  admin: true)
 
     User.create!(name: "Example User",
-                 email: "Nexample@railstutorial.org",
+                 email: "Adminexample@railstutorial.org",
                  password: "foobar",
                  password_confirmation: "foobar")
 
@@ -33,15 +33,14 @@ namespace :db do
       r = Random.new
       tname = Faker::Lorem.word
       amount = r.rand(10...42)
-      collector = user1.id
       debtor = user2.id
-      Transaction.create!(name: tname,
+      user1.Transaction.build(name: tname,
                    amount: amount,
-                   collector_id: collector,
                    debtor_id: debtor)
 
 
     end
+
 
 
   end

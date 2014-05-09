@@ -9,7 +9,7 @@
           
           <form class="form form-vertical">
             <div class="control-group">
-		<%= form_for Transaction.new do |f| %>
+		<%= form_for(@transaction) do |f| %>
 		  <%= render 'shared/error_messages', object: f.object %>
 		  <div class="field">
 		    <label>Transaction Name</label>

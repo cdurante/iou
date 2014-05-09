@@ -9,7 +9,7 @@
           
           <form class="form form-vertical">
             <div class="control-group">
-		<%= form_for Transaction.new do |f| %>
+		<%= form_for(@micropost) do |f| %>
 		  <%= render 'shared/error_messages', object: f.object %>
 		  <div class="field">
 		    <label>Transaction Name</label>
@@ -20,7 +20,7 @@
 	   <div class="control-group">
               <label>Ower</label>
               <div class="controls">
-		<%= f.select :debtor_id, options_for_users, :prompt => 'Select One',:selected => f.user.id %>
+		<%= f.select :debtor_id, options_for_users, :prompt => 'Select One',:selected => params[:pid]  %>
 
               </div>
             </div>

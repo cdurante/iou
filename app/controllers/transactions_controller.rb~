@@ -1,4 +1,9 @@
 class TransactionsController < ApplicationController
+
+  def home
+    @transaction = current_user.transactions.build if signed_in?
+  end 
+
   def create
     @transaction = current_user.transactions.build(:debtor_id => params[:debtor].id, :name => params[:name], :amount => params[:amount], :paid => false)
     if @transaction.save
@@ -10,9 +15,11 @@ class TransactionsController < ApplicationController
   end
 
   def destroy
-    @transaction = current_user.transactions.find(params[:id])
-    @transaction.destroy
-    flash[:notice] = "Removed transaction."
+   @transaction = current_user.transactions.find(params[:id])
+    if @transaction.present?
+     @transaction.destroy
+      flash[:notice] = "Removed transaction."
+    end
     redirect_to current_user
   end
 

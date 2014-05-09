@@ -5,11 +5,12 @@ class UsersController < ApplicationController
 
   def index
     @users = User.paginate(page: params[:page])
+    @transaction = current_user.transactions.build if signed_in?
   end
 
   def show
     @user = User.find(params[:id])
-  #  @transactions = @user.transactions.paginate(page: params[:page])
+    @transactions = @user.transactions.paginate(page: params[:page])
   end
 
   def new

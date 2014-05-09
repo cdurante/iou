@@ -205,45 +205,9 @@ footer {
       <a href="#"><strong><i class="glyphicon glyphicon-list-alt"></i> Reports</strong></a>  
       <hr>    
     </div>
-    <div class="col-md-8">
-      <h3>Your Collections</h3>
-      <table class="table table-striped">
-        <thead>
-          <tr><th>Name</th><th>Amount</th><th>Debtor</th><th>Description</th><th></th></tr>
-        </thead>
-        <tbody>
-	  <% for transaction in @user.transactions %>
-	  <% @debtor = User.find(transaction.debtor_id) %>
-          <tr><td><%=h transaction.name %></td><td><%=h transaction.amount %></td><td><%=h @debtor.name %></td><td>Sam sapien massa, aliquam in cursus ut, ullamcorper in tortor. 
-          Aliquam mauris arcu, tristique a lobortis vitae, condimentum feugiat justo.</td>
-	  <!-- option to remove transaction -->
-	<td>
-	  <%= link_to "delete", transaction, method: :delete,
-                                     data: { confirm: "You sure?" },
-                                     title: micropost.content %>
-	
-	</td>
-	</tr>
+ 
+      <%= render 'shared/showTransactions' %>
 
-	  <% end %>
-        </tbody>
-      </table>
-      
-      <hr>     
-<div class="col-md-8">
-      <h3>What You Owe</h3>
-      <table class="table table-striped">
-        <thead>
-          <tr><th>Name</th><th>Amount</th><th>Debtor</th><th>Description</th></tr>
-        </thead>
-        <tbody>
-	  <% for transaction in @user.transactions %>
-          <tr><td><%=h transaction.name %></td><td><%=h transaction.amount %></td><td><%=h transaction.debtor_id %></td><td>Sam sapien massa, aliquam in cursus ut, ullamcorper in tortor. 
-          Aliquam mauris arcu, tristique a lobortis vitae, condimentum feugiat justo.</td></tr>
-	  <% end %>
-        </tbody>
-      </table>         
-      
       <!--tabs-->
       <div class="container">
         <ul class="nav nav-tabs" id="myTab">

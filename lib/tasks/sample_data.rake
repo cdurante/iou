@@ -35,11 +35,13 @@ namespace :db do
       amount = r.rand(10...42)
       debtor = user2.id
       Transaction.create!(name: tname,
+		   user_id: user1.id,
                    amount: amount,
                    debtor_id: debtor)
 
 
     end
+
 
 
   end
