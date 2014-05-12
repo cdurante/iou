@@ -184,13 +184,12 @@ footer {
                 </div>
                 <h3>Friended by Users</h3>
                 <ul>
-                  <% for user in @user.inverse_friends %>
-                    <li><%=h user.name %></li>
+                  <% for friendship in @user.inverse_friendships %>
+                    <li><%=h friendship.friend.name %></li>
 		    <%= gravatar_for friendship.friend %>
                   <% end %>
                 </ul>
-			<%= render 'shared/transaction_form' %>
-
+         	<%= render 'shared/transaction_form' %>
        </div><!--/row-->
     </div><!--/col-span-9-->
     
@@ -207,7 +206,7 @@ footer {
     </div>
  
       <%= render 'shared/showTransactions' %>
-
+      <%= render 'shared/showInverseTransactions' %>
       <!--tabs-->
       <div class="container">
         <ul class="nav nav-tabs" id="myTab">
@@ -339,15 +338,6 @@ footer {
         
         <!-- JavaScript jQuery code from Bootply.com editor -->
         
-        <script type='text/javascript'>
-        
-        $(document).ready(function() {
-        
-            
-        
-        });
-        
-        </script>
-        
+       
     </body>
 </html>

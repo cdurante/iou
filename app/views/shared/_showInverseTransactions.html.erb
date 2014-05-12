@@ -1,0 +1,30 @@
+    <div class="col-md-12">
+      <h3>What you Owe</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr><th>Name</th><th>Amount</th><th>Collector</th><th>Paid?</th><th></th></tr>
+        </thead>
+        <tbody>
+	  <% for transaction in @user.inverse_transactions %>
+	  <% @collector = User.find(transaction.user_id) %>
+          <tr><td><%=h transaction.name %></td><td><%=h transaction.amount %></td><td><%=h @collector.name %></td>
+	  <td>
+	   <%  if transaction.paid? %>
+		Yes
+	   <% else %>
+		No
+	   <% end %>
+	  </td>
+	  <!-- option to pay up -->
+	<td>
+	  <%= link_to "Pay Up", transaction, method: :post,
+                                     data: { confirm: "You sure?" },
+                                     title: transaction.paid %>
+	
+	</td>
+	</tr>
+
+	  <% end %>
+        </tbody>
+      </table>
+   </div>     
