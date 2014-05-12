@@ -6,7 +6,7 @@ module FriendshipsHelper
     !current_user.inverse_friendships.find_by(friend_id: current_user, user_id: user).nil?
   end
 
-  def inversefriend?(user)
+  def inverse?(user)
     !current_user.inverse_friendships.find_by(friend_id: current_user, user_id: user).nil?
   end
 

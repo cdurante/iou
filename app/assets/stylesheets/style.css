@@ -8,7 +8,12 @@
 /*==========================================================================
   General
   ========================================================================== */
-
+#add_friend a {
+	width: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
+}
 
 /* home page Friend section */
 #list_friends ul {

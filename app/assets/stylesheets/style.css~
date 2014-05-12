@@ -8,7 +8,9 @@
 /*==========================================================================
   General
   ========================================================================== */
-
+#add_friend a {
+	width: 100px;
+}
 
 /* home page Friend section */
 #list_friends ul {
@@ -849,7 +851,7 @@ nav#filter a {
 	margin-right: auto;
 }
 
-#contact-form input[type=text],#contact-form input[type=email], .contactForm textarea {
+#contact-form input[type=text],#contact-form input[type=email], .contactForm textarea ,#contact-form input[type=password]{
 	width: 100%;
 	background: rgba(227, 231, 228, 1);
 	font-family: 'Open Sans', sans serif;
@@ -859,7 +861,7 @@ nav#filter a {
 	vertical-align: middle;
 	padding:0 10px;
 }
-#contact-form input[type=text]:focus,#contact-form input[type=email]:focus, .contactForm textarea:focus {
+#contact-form input[type=password]:focus,#contact-form input[type=text]:focus,#contact-form input[type=email]:focus, .contactForm textarea:focus {
 	background: rgba(101, 106, 100, 1);
 	color: #eff1ef;
 	box-shadow: none;
@@ -869,7 +871,7 @@ nav#filter a {
 	-moz-transition: background 0.25 ease-in;
 	-webkit-transition: background 0.25 ease-in;
 }
-#contact-form input[type=text],#contact-form input[type=email] {
+#contact-form input[type=text],#contact-form input[type=email],#contact-form input[type=password]{
 	height: 60px;
 	margin-bottom:30px;
 }

@@ -1,6 +1,6 @@
     <div class="col-md-12">
       <h3><i class="glyphicon glyphicon-book"></i> Your Collections </h3>
-	<% if @user.transactions.any? %>
+	<% if @user.inverse_transactions.any? %>
 	      <table class="table table-striped">
 		<thead>
 		  <tr><th>Name</th><th>Amount</th><th>Debtor</th><th>Paid?</th><th></th></tr>

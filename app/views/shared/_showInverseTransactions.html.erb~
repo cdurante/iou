@@ -30,5 +30,4 @@
 	      </table>
 	<% else %>
 		<p> You currently have no debts. </p>
-	<% end %>
    </div>     
