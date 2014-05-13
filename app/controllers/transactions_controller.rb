@@ -26,8 +26,8 @@ class TransactionsController < ApplicationController
       flash[:notice] = "Transaction created"
     else
       flash[:error] = "Unable to create transaction."
-      redirect_to current_user
     end
+      redirect_to current_user
   end
 
   # PATCH/PUT /transactions/1
@@ -35,7 +35,7 @@ class TransactionsController < ApplicationController
     if @transaction.update(transaction_params)
       redirect_to @transaction, notice: 'Transaction was successfully updated.'
     else
-      render action: 'edit'
+      redirect_to current_user
     end
   end
 
@@ -46,7 +46,7 @@ class TransactionsController < ApplicationController
      @transaction.destroy
       flash[:notice] = "Removed transaction."
     end
-    redirect_to current_user
+        redirect_to current_user
   end
 
   private
@@ -57,6 +57,10 @@ class TransactionsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def transaction_params
+<<<<<<< HEAD
       params.require(:transaction).permit(:name, :description, :debtor_id, :amount)
+=======
+      params.require(:transaction).permit(:name, :amount, :debtor_id,:description)
+>>>>>>> f59b852d4f84b4fd857591d11967cd2e0901f700
     end
 end
