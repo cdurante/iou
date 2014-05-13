@@ -12,9 +12,16 @@
 		  <div class="field">
 		    <label>Transaction Name</label>
 		    <div class="controls">
-		      <%= f.text_area :name, placeholder: "Transaction Name" ,class: "form-control" %>
+		      <%= f.text_field :name, placeholder: "Transaction Name" ,class: "form-control" %>
 	            </div>
 		  </div>
+
+<div class="field">
+        <label>Description</label>
+        <div class="controls">
+          <%= f.text_area :description, placeholder: "Transaction Description" ,class: "form-control" %>
+              </div>
+      </div>
 
 	         <div class="control-group">
                    <label>Ower</label>
@@ -26,7 +33,7 @@
 	         <div class="control-group">
                    <label>Amount</label>
                    <div class="controls">
-		     <%= f.text_area :amount, placeholder: "Amount", class: "form-control" %>
+		     <%= f.number_field :amount, :step => 'any', placeholder: "Amount", class: "form-control" %>
                    </div>
                  </div> 
 
