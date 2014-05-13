@@ -1,26 +1,15 @@
 <% provide(:title, 'All users') %>
-<<<<<<< HEAD
 
-<div class="users">
-=======
->>>>>>> 7697ed4b32f9e59e22899fd894ccb910121a0d79
-<h1>All users</h1>
+<div class= "users_container">
 
-<%= will_paginate %>
+   <div class="users">
+	<h1>All users</h1>
 
-<<<<<<< HEAD
-<ul >
-	<%= render @users %>
-</ul>
+	<ul class="users">
+	  <%= render @users %>
+	</ul>
 
-<%= will_paginate %>
+	<%= will_paginate %>
+   </div>
 </div>
-=======
-<ul class="users">
-  <% @users.each do |user| %>
-	<%= render @users %>
-  <% end %>
-</ul>
 
-<%= will_paginate %>
->>>>>>> 7697ed4b32f9e59e22899fd894ccb910121a0d79
