@@ -46,7 +46,7 @@ class TransactionsController < ApplicationController
      @transaction.destroy
       flash[:notice] = "Removed transaction."
     end
-        redirect_to root_url
+        redirect_to current_user
   end
 
   private
@@ -57,6 +57,6 @@ class TransactionsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def transaction_params
-      params.require(:transaction).permit(:name, :amount, :debtor_id)
+      params.require(:transaction).permit(:name, :amount, :debtor_id,:description)
     end
 end

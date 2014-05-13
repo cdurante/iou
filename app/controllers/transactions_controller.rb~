@@ -35,7 +35,7 @@ class TransactionsController < ApplicationController
     if @transaction.update(transaction_params)
       redirect_to @transaction, notice: 'Transaction was successfully updated.'
     else
-      render action: 'edit'
+      redirect_to current_user
     end
   end
 
@@ -46,7 +46,7 @@ class TransactionsController < ApplicationController
      @transaction.destroy
       flash[:notice] = "Removed transaction."
     end
-        redirect_to root_url
+        redirect_to current_user
   end
 
   private
