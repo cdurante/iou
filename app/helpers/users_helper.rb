@@ -1,6 +1,5 @@
 module UsersHelper
 
- # Returns the Gravatar (http://gravatar.com/) for the given user.
   def gravatar_for(user, options = { size: 200 })
     gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
     size = options[:size]
@@ -8,10 +7,8 @@ module UsersHelper
     image_tag(gravatar_url, alt: user.name, class: "gravatar")
   end
 
-
   def options_for_users
-	['Spring', 'Summer', 'Autumn', 'Winter']
+    User.all.collect {|p| [ p.name, p.id ] }
   end
 end
-module UsersHelper
-end
+

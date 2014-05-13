@@ -157,9 +157,9 @@ footer {
 		<% if current_user != @user %>
 			<% if friendswith?(@user) %>
 			  <% if inversefriend?(@user) %>
-				<%= link_to '<i class="glyphicon glyphicon-minus"></i><br>Unfriend'.html_safe, inversefriendships_path(:user_id => @user),:class => 'btn btn-info col-sm-3', :method => :delete %>
+				<%= link_to '<i class="glyphicon glyphicon-minus"></i><br>Unfriend'.html_safe, inversefriendships_path(2),:class => 'btn btn-info col-sm-3', :method => :delete %>
 			  <% else %>
-				<%= link_to '<i class="glyphicon glyphicon-minus"></i><br>Unfriend'.html_safe, inversefriendships_path(:user_id => @user),:class => 'btn btn-info col-sm-3', :method => :delete %>
+				<%= link_to '<i class="glyphicon glyphicon-minus"></i><br>Unfriend'.html_safe, friendships_path(:user_id => @user),:class => 'btn btn-info col-sm-3', :method => :delete %>
 			  <% end %>
 			<% else %>
 		       	   <%= link_to '<i class="glyphicon glyphicon-plus"></i><br>Add Friend'.html_safe, friendships_path(:friend_id => @user), :class => 'btn btn-info col-sm-3', :method => :post %>

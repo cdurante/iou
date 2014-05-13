@@ -36,11 +36,12 @@ describe Transaction do
     it { should_not be_valid }
   end
 
-  describe "with out of range amount" do
-    before { @transaction.amount = -1 }
+  describe "with content that is too long" do
+    before { @transaction.content = "a" * 141 }
     it { should_not be_valid }
-  end
 
+
+  end
 
 
 # creating a new micropost, should appear under collections

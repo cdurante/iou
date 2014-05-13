@@ -21,7 +21,7 @@ class TransactionsController < ApplicationController
 
   # POST /transactions
    def create
-    @transaction = current_user.transactions.build(:debtor_id => params[:debtor], :name => params[:name], :amount => params[:amount], :paid => false)
+    @transaction = current_user.transactions.build(transaction_params)
     if @transaction.save
       flash[:notice] = "Transaction created"
     else
@@ -57,6 +57,6 @@ class TransactionsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def transaction_params
-      params.require(:transaction).permit(:content, :amount, :debtor)
+      params.require(:transaction).permit(:name, :amount, :debtor_id)
     end
 end

@@ -26,7 +26,7 @@
 	         <div class="control-group">
                    <label>Amount</label>
                    <div class="controls">
-		     <%= f.text_area :amount, placeholder: "Amount", class: "form-control" %>
+		     <%= f.number_field :amount, :step => 'any', placeholder: "Amount", class: "form-control" %>
                    </div>
                  </div> 
 
