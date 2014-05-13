@@ -1,13 +1,26 @@
 <% provide(:title, 'All users') %>
+<<<<<<< HEAD
 
 <div class="users">
+=======
+>>>>>>> 7697ed4b32f9e59e22899fd894ccb910121a0d79
 <h1>All users</h1>
 
 <%= will_paginate %>
 
+<<<<<<< HEAD
 <ul >
 	<%= render @users %>
 </ul>
 
 <%= will_paginate %>
 </div>
+=======
+<ul class="users">
+  <% @users.each do |user| %>
+	<%= render @users %>
+  <% end %>
+</ul>
+
+<%= will_paginate %>
+>>>>>>> 7697ed4b32f9e59e22899fd894ccb910121a0d79

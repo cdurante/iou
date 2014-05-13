@@ -10,6 +10,8 @@ module UsersHelper
 
 
   def options_for_users
-	User.all.collect {|p| [ p.name, p.id ] }
+	['Spring', 'Summer', 'Autumn', 'Winter']
   end
+end
+module UsersHelper
 end
