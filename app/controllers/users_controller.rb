@@ -3,16 +3,19 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
 
-  def index
+  # GET /users
+ def index
     @users = User.paginate(page: params[:page])
+    @transaction = current_user.transactions.build if signed_in?
   end
 
+  # GET /users/1
   def show
     @user = User.find(params[:id])
     @transactions = @user.transactions.paginate(page: params[:page])
-    @transaction = Transaction.new
   end
 
+  # GET /users/new
   def new
     if signed_in?
   redirect_to root_path
@@ -21,6 +24,11 @@ class UsersController < ApplicationController
     end
   end
 
+  # GET /users/1/edit
+  def edit
+  end
+
+  # POST /users
   def create
     if signed_in?
       redirect_to root_path
@@ -38,10 +46,8 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
-  end
-
-  def update
+  # PATCH/PUT /users/1
+   def update
     if @user.update_attributes(user_params)
       # Handle a successful update.
       flash[:success] = "Profile updated"
@@ -51,6 +57,7 @@ class UsersController < ApplicationController
     end
   end
 
+  # DELETE /users/1
   def destroy
     if current_user.admin? && User.find(params[:id])==current_user
       flash[:error] = "You cannot delete your own administrative account."
@@ -62,8 +69,13 @@ class UsersController < ApplicationController
   end
 
   private
-  
-  def user_params
+    # Use callbacks to share common setup or constraints between actions.
+    def set_user
+      @user = User.find(params[:id])
+    end
+
+    # Only allow a trusted parameter "white list" through.
+    def user_params
     params.require(:user).permit(:name,:email,:password,:password_confirmation)
   end
 
@@ -80,5 +92,4 @@ class UsersController < ApplicationController
   def admin_user
     redirect_to(root_url) unless current_user.admin?
   end
-
 end

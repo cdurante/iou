@@ -1,16 +1,16 @@
 class TransactionsController < ApplicationController
 
-  def home
-    @transaction = current_user.transactions.build if signed_in?
+  def new
+   # @transaction = current_user.transactions.build if signed_in?
   end 
 
   def create
-    @transaction = current_user.transactions.build(:debtor_id => params[:debtor].id, :name => params[:name], :amount => params[:amount], :paid => false)
+    @transaction = current_user.transactions.build(:debtor_id => params[:debtor], :name => params[:name], :amount => params[:amount], :paid => false)
     if @transaction.save
       flash[:notice] = "Transaction created"
     else
       flash[:error] = "Unable to create transaction."
-      redirect_to root_url
+      redirect_to current_user
     end
   end
 
