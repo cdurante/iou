@@ -18,7 +18,8 @@
 		  </td>
 		  <!-- option to remove transaction -->
 		<td>
-		  <%= link_to "delete", transaction, method: :delete,
+		  <%= link_to '<i class="glyphicon glyphicon-minus"></i><br>Delete'.html_safe, transaction, method: :delete,
+					     :class => 'btn btn-info',
 		                             data: { confirm: "You sure?" },
 		                             title: transaction.amount %>
 	

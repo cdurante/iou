@@ -1,6 +1,6 @@
     <div class="col-md-12">
       <h3><i class="glyphicon glyphicon-book"></i> Your Collections </h3>
-	<% if @user.inverse_transactions.any? %>
+	<% if @user.transactions.any? %>
 	      <table class="table table-striped">
 		<thead>
 		  <tr><th>Name</th><th>Amount</th><th>Debtor</th><th>Paid?</th><th></th></tr>
@@ -18,7 +18,8 @@
 		  </td>
 		  <!-- option to remove transaction -->
 		<td>
-		  <%= link_to "delete", transaction, method: :delete,
+		  <%= link_to '<i class="glyphicon glyphicon-minus"></i><br>Delete'.html_safe, transaction, method: :delete,
+					     :class => 'btn btn-info col-sm-3',
 		                             data: { confirm: "You sure?" },
 		                             title: transaction.amount %>
 	

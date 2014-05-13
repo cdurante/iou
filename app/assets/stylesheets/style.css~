@@ -8,15 +8,48 @@
 /*==========================================================================
   General
   ========================================================================== */
+img#name {
+	height: 200px;
+}
+
+.pagination ul {
+	list-style-type: none;
+}
+
+.users_container {
+	margin-top: 120px;
+}
+
+.pagination li
+{
+	display:inline;
+}
+.users {
+	width: 40%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.users ul {
+	list-style-type: none;
+	padding:0; 
+	margin:0; 
+}
+.users li {
+	margin-bottom : 10px;
+	text-align: left;
+}
 #add_friend a {
 	width: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
 }
 
 /* home page Friend section */
 #list_friends ul {
 	list-style-type:none;
 }
-#list_friends img.gravatar {
+img.gravatar {
 	height: 50px;
 	border: 1px solid #5BC0DE;
 	margin-right: 5px;

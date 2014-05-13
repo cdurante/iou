@@ -39,10 +39,7 @@ class User < ActiveRecord::Base
     Digest::SHA1.hexdigest(token.to_s)
   end
 
-  def friendswith?(user)
-    !friendships.find_by(friend_id: user).nil? &&
-     !current_user.inverse_friendships.find_by(friend_id: current_user, user_id: user).nil?
-  end
+
 
   private
 

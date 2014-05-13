@@ -159,7 +159,7 @@ footer {
 			  <% if inversefriend?(@user) %>
 				<%= link_to '<i class="glyphicon glyphicon-minus"></i><br>Unfriend'.html_safe, inversefriendships_path(:user_id => @user),:class => 'btn btn-info col-sm-3', :method => :delete %>
 			  <% else %>
-				<%= link_to '<i class="glyphicon glyphicon-minus"></i><br>Unfriend'.html_safe, inversefriendships_path(:user_id => @user),:class => 'btn btn-info col-sm-3', :method => :delete %>
+				<%= link_to '<i class="glyphicon glyphicon-minus"></i><br>Unfriend'.html_safe, friendships_path(:friend_id => @user),:class => 'btn btn-info col-sm-3', :method => :delete %>
 			  <% end %>
 			<% else %>
 		       	   <%= link_to '<i class="glyphicon glyphicon-plus"></i><br>Add Friend'.html_safe, friendships_path(:friend_id => @user), :class => 'btn btn-info col-sm-3', :method => :post %>
@@ -192,27 +192,34 @@ footer {
     
     
   </div><!--/row-->
-  		<div id="list_friends">
-                <h3>Friends</h3>
-                <ul>
-                  <% for friendship in @user.friendships %>
-                    <li>
-		      <%= gravatar_for friendship.friend %>
-                      <%=h friendship.friend.name %>
-		      <%= link_to "New Bill", transactions_path(:debtor_id => @user), :method => :post %>
 
-                      (<%= link_to "remove", friendship, :method => :delete %>)
-                    </li>
-                  <% end %>
-                </ul>
-                </div>
-                <h3>Friended by Users</h3>
-                <ul>
-                  <% for friendship in @user.inverse_friendships %>
-                    <li><%=h friendship.friend.name %></li>
-		    <%= gravatar_for friendship.friend %>
-                  <% end %>
-                </ul>
+      <div class="row">
+      <hr>
+	<div class="col-md-12" >
+	  <div class="users">
+		<h3>Friends</h3>
+		<ul>
+		   <% for friendship in @user.friendships %>
+		<li>
+		<%= gravatar_for friendship.friend %>
+		<%=h friendship.friend.name %>
+		(<%= link_to "remove", friendship, :method => :delete %>)
+		</li>
+		<% end %>
+		</ul>
+		<ul>
+		<% for friendship in @user.inverse_friendships %>
+		<li>
+		<%= gravatar_for friendship.friend %>
+		<%=h friendship.friend.name %>
+	        (<%= link_to "remove", friendship, :method => :delete %>)
+		</li>
+		<% end %>
+		</ul>
+	  </div>
+	</div>
+      </div>
+
 </div><!--/container-->
 <!-- /Main -->
 
