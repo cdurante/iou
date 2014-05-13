@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
 
+  helper ProcessingHelper
+  
   # GET /users
  def index
     @users = User.paginate(page: params[:page])
@@ -78,7 +80,7 @@ class UsersController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def user_params
     params.require(:user).permit(:name,:email,:password,:password_confirmation)
-  end
+    end
 
   def signed_in_user
      store_location

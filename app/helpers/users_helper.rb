@@ -10,5 +10,6 @@ module UsersHelper
   def options_for_users
     User.all.collect {|p| [ p.name, p.id ] }
   end
-end
 
+
+end
