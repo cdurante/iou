@@ -30,9 +30,9 @@ class TransactionsController < ApplicationController
       redirect_to current_user
   end
 
-  # PATCH/PUT /transactions/1
+
   def update
-    if @transaction.update(transaction_params)
+       if @transaction.update(transaction_params)
       redirect_to @transaction, notice: 'Transaction was successfully updated.'
     else
       redirect_to current_user

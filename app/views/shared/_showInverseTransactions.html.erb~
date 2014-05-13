@@ -8,7 +8,7 @@
 		<tbody>
 		  <% for transaction in @user.inverse_transactions %>
 		  <% @collector = User.find(transaction.user_id) %>
-		  <tr><td><%=h transaction.name %></td><td><%=h transaction.amount %></td><td><%=h @collector.name %></td>
+		  <tr><td><%=h transaction.id %><%=h transaction.name %></td><td><%=h transaction.amount %></td><td><%=h @collector.name %></td>
 		  <td>
 		   <%  if transaction.paid? %>
 			Yes
@@ -18,10 +18,17 @@
 		  </td>
 		  <!-- option to pay up -->
 		<td>
-		  <%= link_to '<i class="glyphicon glyphicon-usd"></i><br>Pay Up'.html_safe, transaction, method: :post,
+		<!-- <%= link_to '<i class="glyphicon glyphicon-usd"></i><br>Pay Up'.html_safe, 
+					     transaction_path(transaction, "transaction[status]" => true), 
+					     method: :put,
 					     :class => 'btn btn-info',
 		                             data: { confirm: "You sure?" },
-		                             title: transaction.paid %>
+		                             title: transaction.paid %>-->
+     <a href="#" class="btn btn-info">
+                    <i class="glyphicon glyphicon-credit-usd"></i><br>
+                    Debts
+                  </a>
+
 	
 		</td>
 		</tr>
