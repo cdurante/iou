@@ -5,14 +5,14 @@ require 'spec_helper'
   subject { page }  
 
   describe "profile page" do
-    let(:user) { FactoryGirl.create(:user) }
-    #@user=User.new(name: "User1Name", email: "user1@example.com", password: "foobar" , password_confirmation: "foobar")
+    #let(:user) { FactoryGirl.create(:user) }
+    @user1=User.new(name: "User1Name", email: "user1@example.com", password: "foobar" , password_confirmation: "foobar")
     @user2=User.new(name: "User2Name", email: "user2@example.com", password: "foobar" , password_confirmation: "foobar")
     #let(:user2) { FactoryGirl.create(:user2, :class => 'User') }
     #let!(:m1) { FactoryGirl.create(:micropost, user: @user, content: "Foo") }
     #let!(:m2) { FactoryGirl.create(:micropost, user: @user2, content: "Bar") }
 
-    before { visit user_path(user) }
+    before { visit user_path(@user1) }
 
     it { should have_content(user.name) }
     #it { should have_title(user.name) }
