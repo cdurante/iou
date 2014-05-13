@@ -32,17 +32,11 @@ class TransactionsController < ApplicationController
 
 
   def update
-    #@transaction = current_user.inverse_transactions.find(params[:id])
-	Transaction.find(:all, :conditions => { :id => 61})
-    if @transaction.present?
-      @transaction.destroy
-      if @transaction.update_attribute(:paid,true)
-	flash[:notice] =  'You are all settled up!'
-      else
-	flash[:error] = "Unable to pay up."
-      end
+       if @transaction.update(transaction_params)
+      redirect_to @transaction, notice: 'Transaction was successfully updated.'
+    else
       redirect_to current_user
-    end    
+    end
   end
 
   # DELETE /transactions/1
@@ -63,6 +57,7 @@ class TransactionsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def transaction_params
+
       params.require(:transaction).permit(:name, :amount, :debtor_id,:description)
     end
 end
