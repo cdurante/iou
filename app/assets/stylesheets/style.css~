@@ -8,7 +8,7 @@
 /*==========================================================================
   General
   ========================================================================== */
-img#name {
+#name img.gravatar {
 	height: 200px;
 }
 
@@ -691,6 +691,7 @@ About
 	-webkit-border-radius:50%;
 		-moz-border-radius:50%;
 			border-radius:50%;	
+	height:250px;
 }
 
 .team-detail h4 {

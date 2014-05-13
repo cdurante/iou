@@ -691,6 +691,7 @@ About
 	-webkit-border-radius:50%;
 		-moz-border-radius:50%;
 			border-radius:50%;	
+	height:250px;
 }
 
 .team-detail h4 {
@@ -747,6 +748,8 @@ nav#filter a {
 	-moz-transition: all 0.2s ease-in-out;
 	-o-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
+	height: 200px;
+	overflow: hidden;
 }
 .portfolio-item img {
 	-webkit-transition: all 300ms linear;

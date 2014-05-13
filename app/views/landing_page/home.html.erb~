@@ -40,7 +40,7 @@
 			<div class="row mar-bot40">
 				<div class="col-lg-4" >
 					<div class="align-center">
-						<i class="fa fa-code fa-5x mar-bot20"></i>
+						<i class="fa fa-dollar fa-5x mar-bot20"></i>
 						<h4 class="text-bold">Pay-Pal Integration</h4>
 						<p>Stuff about PayPal
 						</p>
@@ -49,7 +49,7 @@
 					
 				<div class="col-lg-4" >
 					<div class="align-center">
-						<i class="fa fa-terminal fa-5x mar-bot20"></i>
+						<i class="fa fa-calendar-o fa-5x mar-bot20"></i>
 						<h4 class="text-bold">Autopay</h4>
 						<p>
 							Monthly Billing cycles
@@ -59,7 +59,7 @@
 			
 				<div class="col-lg-4" >
 					<div class="align-center">
-						<i class="fa fa-bolt fa-5x mar-bot20"></i>
+						<i class="fa fa-group fa-5x mar-bot20"></i>
 						<h4 class="text-bold">Friends & Family</h4>
 						<p>stuff about friends list
 						</p>
@@ -109,7 +109,7 @@
 					<div class="row align-center mar-bot40">
 						<div class="col-md-3">
 							<div class="team-member">
-								<figure class="member-photo"><img src="assets/img/team/member1.jpg" alt="" /></figure>
+								<figure class="member-photo"><img src="assets/img/team/caleb.jpeg" alt="" /></figure>
 								<div class="team-detail">
 									<h4>Caleb Durante</h4>
 									<span>User experiences</span>
@@ -118,7 +118,7 @@
 						</div>
 						<div class="col-md-3">
 							<div class="team-member">
-								<figure class="member-photo"><img src="/assets/img/team/member2.jpg" alt="" /></figure>
+								<figure class="member-photo"><img src="/assets/img/team/alyssa.jpeg" alt="" /></figure>
 								<div class="team-detail">
 									<h4>Alyssa Morrow</h4>
 									<span>Web developer</span>
@@ -127,7 +127,7 @@
 						</div>
 						<div class="col-md-3">
 							<div class="team-member">
-								<figure class="member-photo"><img src="/assets/img/team/member3.jpg" alt="" /></figure>
+								<figure class="member-photo"><img src="/assets/img/team/jake.png" alt="" /></figure>
 								<div class="team-detail">
 								<h4>Jake Hilborn</h4>
 									<span>Web designer</span>
@@ -136,7 +136,7 @@
 						</div>
 						<div class="col-md-3">
 							<div class="team-member">
-								<figure class="member-photo"><img src="/assets/img/team/member4.jpg" alt="" /></figure>
+								<figure class="member-photo"><img src="/assets/img/team/stephen.png" alt="" /></figure>
 								<div class="team-detail">
 								<h4>Stephen Anderson</h4>
 									<span>Professor</span>
@@ -178,112 +178,44 @@
 							  
                                 <article class="col-md-4 isotopeItem webdesign">
 									<div class="portfolio-item">
-										<img src="/assets/img/portfolio/img1.jpg" alt="" />
+										<img src="/assets/img/portfolio/signin.png" alt="" />
 										 <div class="portfolio-desc align-center">
 											<div class="folio-info">
-												<h5><a href="#">Features name</a></h5>
-												<a href="/assets/img/portfolio/img1.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
+												<h5><a href="#">Create an account</a></h5>
+												<a href="/assets/img/portfolio/signin.png" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
 											 </div>										   
 										 </div>
 									</div>
                                 </article>
 
-                                <article class="col-md-4 isotopeItem photography">
-									<div class="portfolio-item">
-										<img src="/assets/img/portfolio/img2.jpg" alt="" />
-										 <div class="portfolio-desc align-center">
-											<div class="folio-info">
-												<h5><a href="#">Portfolio name</a></h5>
-												<a href="/assets/img/portfolio/img2.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
-											 </div>										   
-										 </div>
-									</div>
-                                </article>
-								
 
-                                <article class="col-md-4 isotopeItem photography">
-									<div class="portfolio-item">
-										<img src="/assets/img/portfolio/img3.jpg" alt="" />
-										 <div class="portfolio-desc align-center">
-											<div class="folio-info">
-												<h5><a href="#">Portfolio name</a></h5>
-												<a href="/assets/img/portfolio/img3.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
-											 </div>										   
-										 </div>
-									</div>
-                                </article>
 
                                 <article class="col-md-4 isotopeItem print">
 									<div class="portfolio-item">
-										<img src="/assets/img/portfolio/img4.jpg" alt="" />
+										<img src="/assets/img/portfolio/transactions.png" alt="" />
 										 <div class="portfolio-desc align-center">
 											<div class="folio-info">
-												<h5><a href="#">Portfolio name</a></h5>
-												<a href="/assets/img/portfolio/img4.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
+												<h5><a href="#">Create new Transactions</a></h5>
+												<a href="/assets/img/portfolio/transactions.png" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
 											 </div>										   
 										 </div>
 									</div>
                                 </article>
 
-                                <article class="col-md-4 isotopeItem photography">
-									<div class="portfolio-item">
-										<img src="/assets/img/portfolio/img5.jpg" alt="" />
-										 <div class="portfolio-desc align-center">
-											<div class="folio-info">
-												<h5><a href="#">Portfolio name</a></h5>
-												<a href="/assets/img/portfolio/img5.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
-											 </div>										   
-										 </div>
-									</div>
-                                </article>
-
-                                <article class="col-md-4 isotopeItem webdesign">
-									<div class="portfolio-item">
-										<img src="/assets/img/portfolio/img6.jpg" alt="" />
-										 <div class="portfolio-desc align-center">
-											<div class="folio-info">
-												<h5><a href="#">Portfolio name</a></h5>
-												<a href="/assets/img/portfolio/img6.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
-											 </div>										   
-										 </div>
-									</div>
-                                </article>
 
                                 <article class="col-md-4 isotopeItem print">
 									<div class="portfolio-item">
-										<img src="/assets/img/portfolio/img7.jpg" alt="" />
+										<img src="/assets/img/portfolio/collections.png" alt="" />
 										 <div class="portfolio-desc align-center">
 											<div class="folio-info">
-												<h5><a href="#">Portfolio name</a></h5>
-												<a href="/assets/img/portfolio/img7.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
+												<h5><a href="#">View your Transactions</a></h5>
+												<a href="/assets/img/portfolio/collections.png" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
 											 </div>										   
 										 </div>
 									</div>
                                 </article>
 
-                                <article class="col-md-4 isotopeItem photography">
-									<div class="portfolio-item">
-										<img src="/assets/img/portfolio/img8.jpg" alt="" />
-										 <div class="portfolio-desc align-center">
-											<div class="folio-info">
-												<h5><a href="#">Portfolio name</a></h5>
-												<a href="/assets/img/portfolio/img8.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
-											 </div>										   
-										 </div>
-									</div>
-                                </article>
 
-                                <article class="col-md-4 isotopeItem print">
-									<div class="portfolio-item">
-										<img src="/assets/img/portfolio/img9.jpg" alt="" />
-										 <div class="portfolio-desc align-center">
-											<div class="folio-info">
-												<h5><a href="#">Portfolio name</a></h5>
-												<a href="/assets/img/portfolio/img9.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
-											 </div>										   
-										 </div>
-									</div>
-                                </article>
                                 </div>
                                         
 							</div>
@@ -312,7 +244,7 @@
 	
 	<a href="#header" class="scrollup"><i class="fa fa-chevron-up"></i></a>	
 
-	<%= javascript_include_tag "modernizr-2.6.2-respond-1.1.0.min.js","jquery.easing.1.3.js", "bootstrap.min.js", "jquery.isotope.min.js", "jquery.nicescroll.min.js", "fancybox/jquery.fancybox.pack.js", "skrollr.min.js", "jquery.scrollTo-1.4.3.1-min.js", "jquery.localscroll-1.2.7-min.js", "stellar.js", "jquery.appear.js", "validate.js", "main.js" %>
+	<%= javascript_include_tag "modernizr-2.6.2-respond-1.1.0.min.js","jquery.easing.1.3.js", "bootstrap.min.js", "jquery.isotope.min.js", "jquery.nicescroll.min.js", "fancybox/jquery.fancybox.pack.js", "skrollr.min.js", "jquery.scrollTo-1.4.3.1-min.js", "jquery.localscroll-1.2.7-min.js", "stellar.js", "jquery.appear.js",  "main.js" %>
 	</body>
 </html>
 
