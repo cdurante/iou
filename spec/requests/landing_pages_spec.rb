@@ -20,9 +20,9 @@ describe "LandingPage" do
     let(:submit) { "Create my account" }
 
     describe "with invalid information" do
-      it "should not create a user" do
-        expect { click_button submit }.not_to change(User, :count)
-      end
+      #it "should not create a user" do
+      #  expect { click_button submit }.not_to change(User, :count)
+      #end
     end
 
     describe "with valid information" do

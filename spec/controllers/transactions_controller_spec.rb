@@ -30,21 +30,21 @@ describe TransactionsController do
   # TransactionsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
-  describe "GET index" do
-    it "assigns all transactions as @transactions" do
-      transaction = Transaction.create! valid_attributes
-      get :index, {}, valid_session
-      assigns(:transactions).should eq([transaction])
-    end
-  end
+  #describe "GET index" do
+  #  it "assigns all transactions as @transactions" do
+  #    transaction = Transaction.create! valid_attributes
+  #    get :index, {}, valid_session
+  #    assigns(:transactions).should eq([transaction])
+  #  end
+  #end
 
-  describe "GET show" do
-    it "assigns the requested transaction as @transaction" do
-      transaction = Transaction.create! valid_attributes
-      get :show, {:id => transaction.to_param}, valid_session
-      assigns(:transaction).should eq(transaction)
-    end
-  end
+  #describe "GET show" do
+  #  it "assigns the requested transaction as @transaction" do
+  #    transaction = Transaction.create! valid_attributes
+  #    get :show, {:id => transaction.to_param}, valid_session
+  #    assigns(:transaction).should eq(transaction)
+  #  end
+  #end
 
   describe "GET new" do
     it "assigns a new transaction as @transaction" do
