@@ -42,8 +42,8 @@ class UsersController < ApplicationController
         flash[:success] = "Welcome to IOU"
         redirect_to @user
       else
-        flash[:error] = "Unable to add friend."
-        render root_path
+        flash[:error] = "Unable to create your account."
+        redirect_to root_path
         
       end
     end
