@@ -7,8 +7,8 @@
 		</thead>
 		<tbody>
 		  <% for transaction in @user.transactions %>
-		  <% @debtor = User.find(transaction.debtor_id) %>
-		  <tr><td><%=h transaction.name %></td><td><%=h transaction.amount %></td><td><%=h @debtor.name %></td>
+		  <% debtor = User.find(transaction.debtor_id) %> 
+		  <tr><td><%=h transaction.name %></td><td><%=h transaction.amount %></td><td><%=h debtor.name %></td>
 		  <td>
 		   <%  if transaction.paid? %>
 			Yes

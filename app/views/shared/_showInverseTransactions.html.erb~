@@ -12,25 +12,24 @@
 		  <td>
 		   <%  if transaction.paid? %>
 			Yes
+			</td>
 		   <% else %>
 			No
-		   <% end %>
-		  </td>
-		  <!-- option to pay up -->
+			</td>
 		<td>
-		<!-- <%= link_to '<i class="glyphicon glyphicon-usd"></i><br>Pay Up'.html_safe, 
-					     transaction_path(transaction, "transaction[status]" => true), 
-					     method: :put,
-					     :class => 'btn btn-info',
-		                             data: { confirm: "You sure?" },
-		                             title: transaction.paid %>-->
-     <a href="#" class="btn btn-info">
-                    <i class="glyphicon glyphicon-credit-usd"></i><br>
-                    Pay Up
-                  </a>
-
-	
+		<%= form_for(transaction) do |f| %>
+		   <p>
+			<%= f.check_box :paid, :checked => true , :style => 'visibility: hidden' %>
+			<%= button_tag( :class => 'btn btn-info') do %>
+				<i class="glyphicon glyphicon-usd"></i><br>Pay Up
+			<% end %>
+		   </p>
+		<% end %>
 		</td>
+		   <% end %>
+		  
+		  <!-- option to pay up -->
+		
 		</tr>
 
 		  <% end %>

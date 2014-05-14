@@ -1,7 +1,9 @@
 Iou::Application.routes.draw do
-  get "ajax/users"
   resources :friendships
-  resources :transactions
+  resources :transactions do
+    post :set_paid
+  end
+  
    resources :users do
     member do
       get :transactions
@@ -15,6 +17,7 @@ Iou::Application.routes.draw do
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

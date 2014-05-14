@@ -6,10 +6,6 @@ class TransactionsController < ApplicationController
     @transactions = Transaction.all
   end
 
-  # GET /transactions/1
-  def show
-  end
-
   # GET /transactions/new
   def new
     @transaction = Transaction.new
@@ -17,6 +13,15 @@ class TransactionsController < ApplicationController
 
   # GET /transactions/1/edit
   def edit
+    @transaction = Transaction.find(params[:id])
+  end
+
+  def update
+     @transaction = Transaction.find(params[:id])
+     if @transaction.update_attributes(params[:transaction].permit(:paid))
+       flash[:success] = "You are all paid up!" 
+     end
+    redirect_to current_user
   end
 
   # POST /transactions
@@ -34,13 +39,7 @@ class TransactionsController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def update
-       if @transaction.update(transaction_params)
-      redirect_to @transaction, notice: 'Transaction was successfully updated.'
-    else
-      redirect_to current_user
-    end
-  end
+
 
   # DELETE /transactions/1
   def destroy
