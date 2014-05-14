@@ -4,17 +4,18 @@
             <h4>Create new Transaction</h4>
           </div>
         </div>
+        
         <div class="panel-body">
          
             <div class="control-group">
-		<%= form_for(@transaction, class: "form form-vertical" ) do |f| %>
-		  <%= render 'shared/error_messages', object: f.object %>
-		  <div class="field">
-		    <label>Transaction Name</label>
-		    <div class="controls">
-		      <%= f.text_field :name, placeholder: "Transaction Name" ,class: "form-control" %>
-	            </div>
-		  </div>
+		              <%= form_for(@transaction, class: "form form-vertical" ) do |f| %>
+		              <%= render 'shared/error_messages', object: f.object %>
+		          <div class="field">
+		            <label>Transaction Name</label>
+		            <div class="controls">
+		              <%= f.text_field :name, placeholder: "Transaction Name" ,class: "form-control" %>
+	             </div>
+		          </div>
 
 <div class="field">
         <label>Description</label>
@@ -37,9 +38,8 @@
                    </div>
                  </div> 
 
-
-	      <%= f.submit "Create", class: "btn btn-large btn-primary" %>
+	      <%= f.submit "Create", class: "btn btn-large btn-primary", style: "margin-left: 0px;" %>
 	   <% end %>
 	  </div>
-        </div><!--/panel content-->
-      </div><!--/panel-->
+</div><!--/panel content-->
+</div><!--/panel-->
