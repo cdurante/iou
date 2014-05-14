@@ -7,8 +7,8 @@ module UsersHelper
     image_tag(gravatar_url, alt: user.name, class: "gravatar")
   end
 
-  def options_for_users
-    User.all.collect {|p| [ p.name, p.id ] }
+  def options_for_debtors(user)
+    user.friends.collect {|p| [ p.name, p.id ] }
   end
 
 

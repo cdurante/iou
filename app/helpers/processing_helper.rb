@@ -15,7 +15,7 @@ def monthly_receivable(user)
   	if user.transactions.any?
   	 	for transaction in user.transactions
   	 		if transaction.paid?
-  	 			monthly_receivable += transaction.amount.to_f
+  	 			monthly_received += transaction.amount.to_f
   	 		end
   	 	end
   	end
@@ -39,7 +39,7 @@ def monthly_receivable(user)
   	if user.inverse_transactions.any?
   		for transaction in user.inverse_transactions
   			if transaction.paid?
-  				monthly_payable += transaction.amount.to_f
+  				monthly_paid += transaction.amount.to_f
   			end
   		end
   	end
