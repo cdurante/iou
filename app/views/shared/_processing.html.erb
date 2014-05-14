@@ -7,19 +7,20 @@
                     <% if @user.transactions.any? %>
                           <small>I've Received</small>
                           <div class="progress">
-                          <%= monthly_receivable(@user) %>
-                           <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow='<%= monthly_received(@user) %>' aria-valuemin="0" aria-valuemax= '<%= monthly_receivable(@user) %>' style="width: <%= 100*(monthly_received(@user)/monthly_receivable(@user)) %>%">
-
-                             <span class="sr-only"> <%= 100*(monthly_received(@user)/monthly_receivable(@user))%> % Complete</span> 
+                          $<%= monthly_received(@user) %>
+                           <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow='<%= monthly_received(@user) %>' aria-valuemin="0" aria-valuemax= '<%= monthly_receivable(@user) %>' style="width: <%=100*(monthly_received(@user)/monthly_receivable(@user))%>%"
+                             <span class="sr-only"> <%=(100*(monthly_received(@user)/monthly_receivable(@user))).round(2)%>% Complete</span> 
                             </div>
                           </div>
-                       
+                       <% end %>
+
+                       <% if @user.inverse_transactions.any? %>
 
                           <small>I've Paid</small>
                           <div class="progress">
-                            <%= monthly_paid(@user) %>
-                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow='<%= monthly_paid(@user) %>' aria-valuemin="0" aria-valuemax='monthly_payable(@user)' style="width: %"
-                              <span class="sr-only"> <%=100*(monthly_paid(@user)/monthly_payable(@user))%> % Complete</span>
+                            $<%= monthly_paid(@user) %>
+                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow='<%= monthly_paid(@user) %>' aria-valuemin="0" aria-valuemax='monthly_payable(@user)' style="width: <%=100*(monthly_paid(@user)/monthly_payable(@user))%>%"
+                              <span class="sr-only"> <%=(100*(monthly_paid(@user)/monthly_payable(@user))).round(2)%>% Complete</span>
                             </div>
                           </div>
                     <% end %>
