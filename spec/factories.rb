@@ -6,14 +6,12 @@ FactoryGirl.define do
    password_confirmation "passwd"
    admin "TRUE"
  end
- #factory :user2 do
- #  name	"Foo bar"
- #  email "for@bar.com"
- #  password "passwd"
- #  password_confirmation "passwd"
- #end
- factory :micropost do
-    content "Lorem ipsum"
+
+ factory :transaction do
+    name "Lorem ipsum"
+    amount "5"
+    debtor_id "2"
+    description "FactoryGirl description of transaction"
     user
   end
 end
