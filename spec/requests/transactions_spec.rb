@@ -1,11 +1,8 @@
 require 'spec_helper'
 
 describe "Transactions" do
-  describe "GET /transactions" do
-    it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get transactions_path
-      response.status.should be(200)
-    end
+  @user1=User.new(name: "User1Name", email: "user1@example.com", password: "foobar" , password_confirmation: "foobar")
+  @Transaction1=Transaction.new(name: "Transaction1", amount: "5", debtor_id: "2", description: "This is a description for transactions")
+  describe "valid transactions" do
   end
 end

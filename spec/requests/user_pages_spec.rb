@@ -12,37 +12,37 @@ require 'spec_helper'
     #let!(:m1) { FactoryGirl.create(:micropost, user: @user, content: "Foo") }
     #let!(:m2) { FactoryGirl.create(:micropost, user: @user2, content: "Bar") }
 
+    before { sign_in user1 }
     before { visit user_path(@user1) }
-
-    it { should have_content(user.name) }
-    #it { should have_title(user.name) }
+    
+    it { should have_title(@user1.name) }
 
     describe "friend/unfriend buttons" do
       #let(:other_user) { FactoryGirl.create(:other_user) }
       
       before { sign_in user }
 
-      #describe "friending a user" do
-      #  before { visit user_path(user2) }
+      describe "friending a user" do
+        #before { visit user_path(user2) }
 
-      #  it "should add the user to the page" do
-      #    expect do
-      #      click_button "Add friend"
-      #    end.to have_content(user.name)
-      #  end
+        #it "should add the user to the page" do
+        #  expect do
+        #    click_button "Add friend"
+        #  end.to have_content(user.name)
+        #end
 
-      #  it "should increment the user's friends count" do
-      #    expect do
-      #      click_button "Add friend"
-      #    end.to change(user.friends, :count).by(1)
-      #  end
+        #it "should increment the user's friends count" do
+        #  expect do
+        #    click_button "Add friend"
+        #  end.to change(user.friends, :count).by(1)
+        #end
 
-      #  it "should increment the other user's friends count" do
-      #    expect do
-      #      click_button "Add friend"
-      #    end.to change(other_user.friendships, :count).by(1)
-      #  end
-      #end
+        #it "should increment the other user's friends count" do
+        #  expect do
+        #    click_button "Add friend"
+        #  end.to change(other_user.friendships, :count).by(1)
+        #end
+      end
     end
   end
 end
