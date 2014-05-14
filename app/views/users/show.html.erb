@@ -84,7 +84,9 @@ footer {
   </h1>
 
     </section>
-    <%= render 'shared/transaction_form' %>
+    <% if current_user == @user %>
+      <%= render 'shared/transaction_form' %>
+    <% end %>
     </div><!-- /span-3 -->
     <div class="col-md-9">
         
@@ -93,13 +95,40 @@ footer {
 
      <div class="row">
             <!-- center left--> 
-
+<% if current_user == @user %>
             <div>
              <%= render 'shared/processing' %>
             </div>
-            
-        
-         
+
+<% else %>     
+        <div class="col-md-7" >
+	  <div class="users">
+		<h3>Friends</h3>
+		<ul>
+		<% for friendship in @user.friendships %>
+		<li>
+		<%= gravatar_for friendship.friend %>
+		<%=h friendship.friend.name %>
+		<% if current_user == @user %>
+		  (<%= link_to "remove", friendship, :method => :delete %>)
+		<% end %>
+		</li>
+		<% end %>
+		</ul>
+		<ul>
+		<% for friendship in @user.inverse_friendships %>
+		<li>
+		<%= gravatar_for friendship.user %>
+		<%=h friendship.user.name %>
+		<% if current_user == @user %>
+	           (<%= link_to "remove", friendship, :method => :delete %>)
+		<% end %>
+		</li>
+		<% end %>
+		</ul>
+	  </div>
+	</div>
+<% end %>     
             <!--center-right-->
           <div class="col-md-5">      
                 <hr>
@@ -138,7 +167,7 @@ footer {
        </div><!--/row-->
     </div><!--/col-span-9-->
 
-
+<% if current_user == @user %>
   <div class="col-md-12">
         <ul class="nav nav-tabs" id="myTab">
           <li class="active"><a href="#collections" data-toggle="tab">Your Collections</a></li>
@@ -155,38 +184,43 @@ footer {
           </div>
         </div>
       </div>
+<% end %>
       <!--/tabs-->
     
     
   </div><!--/row-->
-
-      <div class="row">
-      <hr>
-	<div class="col-md-12" >
-	  <div class="users">
-		<h3>Friends</h3>
-		<ul>
-		   <% for friendship in @user.friendships %>
-		<li>
-		<%= gravatar_for friendship.friend %>
-		<%=h friendship.friend.name %>
-		(<%= link_to "remove", friendship, :method => :delete %>)
-		</li>
-		<% end %>
-		</ul>
-		<ul>
-		<% for friendship in @user.inverse_friendships %>
-		<li>
-		<%= gravatar_for friendship.friend %>
-		<%=h friendship.friend.name %>
-	        (<%= link_to "remove", friendship, :method => :delete %>)
-		</li>
-		<% end %>
-		</ul>
-	  </div>
-	</div>
-      </div>
-
+      <% if current_user == @user %> 
+	      <div class="row">
+	      <hr>
+		<div class="col-md-12" >
+		  <div class="users">
+			<h3>Friends</h3>
+			<ul>
+			<% for friendship in @user.friendships %>
+			<li>
+			<%= gravatar_for friendship.friend %>
+			<%=h friendship.friend.name %>
+			<% if current_user == @user %>
+			  (<%= link_to "remove", friendship, :method => :delete %>)
+			<% end %>
+			</li>
+			<% end %>
+			</ul>
+			<ul>
+			<% for friendship in @user.inverse_friendships %>
+			<li>
+			<%= gravatar_for friendship.user %>
+			<%=h friendship.user.name %>
+			<% if current_user == @user %>
+			   (<%= link_to "remove", friendship, :method => :delete %>)
+			<% end %>
+			</li>
+			<% end %>
+			</ul>
+		  </div>
+		</div>
+	      </div>
+      <% end %>
 </div><!--/container-->
 <!-- /Main -->
 

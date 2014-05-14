@@ -84,7 +84,9 @@ footer {
   </h1>
 
     </section>
-    <%= render 'shared/transaction_form' %>
+    <% if current_user == @user %>
+      <%= render 'shared/transaction_form' %>
+    <% end %>
     </div><!-- /span-3 -->
     <div class="col-md-9">
         
@@ -93,25 +95,42 @@ footer {
 
      <div class="row">
             <!-- center left--> 
-
+<% if current_user == @user %>
             <div>
-             <!-- <%= render 'shared/processing' %> -->
+             <%= render 'shared/processing' %>
             </div>
-            
-        
-         
+
+<% else %>     
+        <div class="col-md-7" >
+	  <div class="users">
+		<h3>Friends</h3>
+		<ul>
+		<% for friendship in @user.friendships %>
+		<li>
+		<%= gravatar_for friendship.friend %>
+		<%=h friendship.friend.name %>
+		<% if current_user == @user %>
+		  (<%= link_to "remove", friendship, :method => :delete %>)
+		<% end %>
+		</li>
+		<% end %>
+		</ul>
+		<ul>
+		<% for friendship in @user.inverse_friendships %>
+		<li>
+		<%= gravatar_for friendship.user %>
+		<%=h friendship.user.name %>
+		<% if current_user == @user %>
+	           (<%= link_to "remove", friendship, :method => :delete %>)
+		<% end %>
+		</li>
+		<% end %>
+		</ul>
+	  </div>
+	</div>
+<% end %>     
             <!--center-right-->
-          <div class="col-md-5">
-              
-                <ul class="nav nav-justified">
-              <li><a href="#"><i class="glyphicon glyphicon-cog"></i></a></li>
-                    <li><a href="#"><i class="glyphicon glyphicon-heart"></i></a></li>
-              <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-comment"></i><span class="count">3</span></a><ul class="dropdown-menu" role="menu"><li><a href="#">1. Is there a way..</a></li><li><a href="#">2. Hello, admin. I would..</a></li><li><a href="#"><strong>All messages</strong></a></li></ul></li>
-              <li><a href="#"><i class="glyphicon glyphicon-user"></i></a></li>
-              <li><a title="Add Widget" data-toggle="modal" href="#addWidgetModal"><span class="glyphicon glyphicon-plus-sign"></span></a></li>
-            </ul>  
-              
-               
+          <div class="col-md-5">      
                 <hr>
               
                 <div class="btn-group btn-group-justified">
@@ -136,7 +155,7 @@ footer {
 			  <% if inversefriend?(@user) %>
 				<%= link_to '<i class="glyphicon glyphicon-minus"></i><br>Unfriend'.html_safe, inversefriendships_path(2),:class => 'btn btn-info col-sm-3', :method => :delete %>
 			  <% else %>
-				<%= link_to '<i class="glyphicon glyphicon-minus"></i><br>Unfriend'.html_safe, friendships_path(:user_id => @user),:class => 'btn btn-info col-sm-3', :method => :delete %>
+				<%= link_to '<i class="glyphicon glyphicon-minus"></i><br>Unfriend'.html_safe, friendships_path(:id => current_user.friendships.find_by_friend_id(@user.id).id),:class => 'btn btn-info col-sm-3', :method => :delete %>
 			  <% end %>
 			<% else %>
 		       	   <%= link_to '<i class="glyphicon glyphicon-plus"></i><br>Add Friend'.html_safe, friendships_path(:friend_id => @user), :class => 'btn btn-info col-sm-3', :method => :post %>
@@ -148,7 +167,7 @@ footer {
        </div><!--/row-->
     </div><!--/col-span-9-->
 
-
+<% if current_user == @user %>
   <div class="col-md-12">
         <ul class="nav nav-tabs" id="myTab">
           <li class="active"><a href="#collections" data-toggle="tab">Your Collections</a></li>
@@ -165,38 +184,43 @@ footer {
           </div>
         </div>
       </div>
+<% end %>
       <!--/tabs-->
     
     
   </div><!--/row-->
-
+      <% if current_user == @user %> 
       <div class="row">
       <hr>
 	<div class="col-md-12" >
 	  <div class="users">
 		<h3>Friends</h3>
 		<ul>
-		   <% for friendship in @user.friendships %>
+		<% for friendship in @user.friendships %>
 		<li>
 		<%= gravatar_for friendship.friend %>
 		<%=h friendship.friend.name %>
-		(<%= link_to "remove", friendship, :method => :delete %>)
+		<% if current_user == @user %>
+		  (<%= link_to "remove", friendship, :method => :delete %>)
+		<% end %>
 		</li>
 		<% end %>
 		</ul>
 		<ul>
 		<% for friendship in @user.inverse_friendships %>
 		<li>
-		<%= gravatar_for friendship.friend %>
-		<%=h friendship.friend.name %>
-	        (<%= link_to "remove", friendship, :method => :delete %>)
+		<%= gravatar_for friendship.user %>
+		<%=h friendship.user.name %>
+		<% if current_user == @user %>
+	           (<%= link_to "remove", friendship, :method => :delete %>)
+		<% end %>
 		</li>
 		<% end %>
 		</ul>
 	  </div>
 	</div>
       </div>
-
+      <% end %>
 </div><!--/container-->
 <!-- /Main -->
 
