@@ -4,6 +4,7 @@
 	<% if @user.transactions.any? %>
 	      
 	      <table class="table table-striped">
+
 <<<<<<< HEAD
 		<thead>
 		  <tr><th>Name</th><th>Amount</th><th>Debtor</th><th>Paid?</th><th></th></tr>
@@ -28,8 +29,11 @@
 	
 		</td>
 		</tr>
+
+			  <% end %>
+			</tbody>
+
 =======
-			
 			<thead>
 			  <tr><th>Name</th><th>Amount</th><th>Debtor</th><th>Paid?</th><th></th></tr>
 			</thead>
@@ -55,7 +59,7 @@
 
 			  <% end %>
 			</tbody>
->>>>>>> 2c022182d9a1a2d7703da3f6d0b368f850d68c7c
+>>>>>>> cf46a239e2a1d2cf9a0f2d0ff5b1c71feccebcf0
 
 	      </table>
 	

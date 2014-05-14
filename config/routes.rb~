@@ -1,8 +1,6 @@
 Iou::Application.routes.draw do
   resources :friendships
-  resources :transactions do
-    post :set_paid
-  end
+  resources :transactions 
   
    resources :users do
     member do
@@ -17,8 +15,12 @@ Iou::Application.routes.draw do
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
+<<<<<<< HEAD
 
 
+=======
+  match '/friendships', to: 'friendships#destroy', via: 'delete'
+>>>>>>> cf46a239e2a1d2cf9a0f2d0ff5b1c71feccebcf0
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
