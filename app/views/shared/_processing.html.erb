@@ -7,17 +7,19 @@
                     <% if @user.transactions.any? %>
                           <small>I've Received</small>
                           <div class="progress">
-<%= monthly_receivable(@user) %>
-                         <!--   <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow='<%= monthly_received(@user) %>' aria-valuemin="0" aria-valuemax= '<%= monthly_receivable(@user) %>' style="width: 72%">
+                          <%= monthly_receivable(@user) %>
+                           <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow='<%= monthly_received(@user) %>' aria-valuemin="0" aria-valuemax= '<%= monthly_receivable(@user) %>' style="width: <%= 100*(monthly_received(@user)/monthly_receivable(@user)) %>%">
 
-                             <span class="sr-only"> <%= monthly_received(@user)/monthly_receivable(@user) %> % Complete</span> 
+                             <span class="sr-only"> <%= 100*(monthly_received(@user)/monthly_receivable(@user))%> % Complete</span> 
                             </div>
                           </div>
                        
-                          <small>I've Received</small>
+
+                          <small>I've Paid</small>
                           <div class="progress">
-                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                              <span class="sr-only">80% Complete</span> -->
+                            <%= monthly_paid(@user) %>
+                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow='<%= monthly_paid(@user) %>' aria-valuemin="0" aria-valuemax='monthly_payable(@user)' style="width: %"
+                              <span class="sr-only"> <%=100*(monthly_paid(@user)/monthly_payable(@user))%> % Complete</span>
                             </div>
                           </div>
                     <% end %>
