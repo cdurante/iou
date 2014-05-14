@@ -16,7 +16,3 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
-
-$(document).ready ->
-  $('#transaction_collector').autocomplete({source: "/ajax/users"})
-
