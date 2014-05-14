@@ -7,13 +7,6 @@ FactoryGirl.define do
    admin "TRUE"
  end
 
- #factory :user do
- #  name	"User 2"
- #  email "user2@domain.com"
- #  password "passwd"
- #  password_confirmation "passwd"
- #end
-
  factory :transaction do
     name "Lorem ipsum"
     amount "5"

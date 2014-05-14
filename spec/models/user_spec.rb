@@ -21,11 +21,6 @@ describe User do
     it { should_not be_valid }
   end
 
-  #describe "when password is not present" do
-  #  before { @user.password = nil }
-  #  it { should_not be_valid }
-  #end
-
   describe "when password_confirmation is not present" do
     before { @user.password_confirmation = nil }
     it { should_not be_valid }
